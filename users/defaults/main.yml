@@ -1,0 +1,22 @@
+---
+# defaults file for users
+
+# FROM TASK: <r_users_t_common> create users and update users' authentication tokens
+
+# EXAMPLE: users variable
+# users:
+#   user1:
+#     comment:
+#     uid:
+#     # type: list
+#     append_groups:
+#     home:
+#     shell:
+#     # plain text
+#     password:
+#     # type: bool
+#     needs_generate_ssh_key:
+#   user2:
+#     # ...
+#   # ...
+users:

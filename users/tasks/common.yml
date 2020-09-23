@@ -1,0 +1,21 @@
+- name: <r_users_t_common> create users and update users' authentication tokens
+  user:
+    name: "{{ username }}"
+    comment: "{{ v.comment | default(omit) }}"
+    uid: "{{ v.uid | default(omit) }}"
+    groups: "{{ v.append_groups | default(omit) }}"
+    append: "{{ 'yes' if v.append_groups is defined else omit }}"
+    create_home: yes
+    home: "{{ v.home | default(omit) }}"
+    shell: "{{ v.shell | default(omit) }}"
+    password: "{{ v.password | string | password_hash('sha512', salt) if v.password is defined else omit }}"
+    generate_ssh_key: "{{ v.needs_generate_ssh_key | default(omit) }}"
+    ssh_key_comment: "{{ username }}@{{ hostname }}"
+    state: present
+    remove: no
+  loop: "{{ users | dict2items }}"
+  vars:
+    username: "{{ item.key }}"
+    v: "{{ item.value }}"
+    salt: "{{ 65534 | random(seed=inventory_hostname) | string }}"
+    hostname: "{{ ansible_facts['fqdn'] }}"

@@ -1,0 +1,12 @@
+---
+# defaults file for git_sparse_checkout
+
+# FROM TASK: <r_git_sparse_checkout_t_common> create repository directory
+#git_repo_path:
+
+# FROM TASK: <r_git_sparse_checkout_t_common> git remote add origin url
+#git_url:
+
+# FROM TASK: <r_git_sparse_checkout_t_sparse_checkout> Specify what files are included
+#checkout_dir:
+checkout_dir_pattern: "/{{ checkout_dir }}/"
