@@ -1,3 +1,4 @@
+---
 - name: <r_users_t_common> create users and update users' authentication tokens
   user:
     name: "{{ username }}"

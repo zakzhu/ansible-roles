@@ -1,3 +1,4 @@
+---
 - name: <r_users_t_create_groups> create primary groups
   group:
     name: "{{ groupname }}"
