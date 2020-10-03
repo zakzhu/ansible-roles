@@ -1,0 +1,19 @@
+- name: <r_users_t_create_groups> create primary groups
+  group:
+    name: "{{ groupname }}"
+    gid: "{{ v.gid }}"
+    state: present
+  loop: "{{ primary_groups | dict2items }}"
+  vars:
+    groupname: "{{ item.key }}"
+    v: "{{ item.value }}"
+
+- name: <r_users_t_create_groups> create secondary groups
+  group:
+    name: "{{ groupname }}"
+    gid: "{{ v.gid }}"
+    state: present
+  loop: "{{ secondary_groups | dict2items }}"
+  vars:
+    groupname: "{{ item.key }}"
+    v: "{{ item.value }}"

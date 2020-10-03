@@ -1,6 +1,10 @@
 ---
 # tasks file for users
 
+- import_tasks: create_groups.yml
+  tags:
+    - r_users_t_create_groups
+
 - import_tasks: common.yml
   tags:
     - r_users_t_common

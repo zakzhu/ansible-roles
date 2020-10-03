@@ -3,7 +3,8 @@
     name: "{{ username }}"
     comment: "{{ v.comment | default(omit) }}"
     uid: "{{ v.uid | default(omit) }}"
-    groups: "{{ v.append_groups | default(omit) }}"
+    group: "{{ v.primary_group | default(omit) }}"
+    groups: "{{ v.secondary_groups | default(omit) }}"
     append: "{{ 'yes' if v.append_groups is defined else omit }}"
     create_home: yes
     home: "{{ v.home | default(omit) }}"
