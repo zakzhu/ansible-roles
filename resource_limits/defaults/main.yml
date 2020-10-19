@@ -1,5 +1,0 @@
----
-# defaults file for resource_limits
-
-# FROM TASK: "<r_resource_limits_t_common> template a file to /etc/security/limits.d/{{ limits_conf_file }}"
-limits_conf_file:
