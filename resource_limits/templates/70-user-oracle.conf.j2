@@ -1,0 +1,8 @@
+oracle soft nofile 65536
+oracle hard nofile 65536
+oracle soft nproc 65536
+oracle hard nproc 65536
+oracle soft stack 32768
+oracle hard stack 32768
+oracle soft memlock {{ memlock_limit }} 
+oracle hard memlock {{ memlock_limit }}

@@ -1,0 +1,21 @@
+- name: <r_resource_limits_t_enable_limits> enable limits config file
+  shell:
+  become: yes
+  become_method: su
+  become_user: oracle
+  #become_flags: "-s /bin/sh"
+  args:
+    cmd: ulimit -a
+    #chdir:
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *won't* be run.
+    #creates:
+
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *will* be run.
+    #remove:
+  register: limits_report
+
+- name: <r_resource_limits_t_enable_limits> report all current limits
+  debug:
+    msg: "{{ limits_report.stdout_lines }}"
