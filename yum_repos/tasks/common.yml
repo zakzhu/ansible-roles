@@ -1,0 +1,29 @@
+---
+- name: <r_yum_repo_t_common> remove /etc/yum.repos.d and /var/cache/yum
+  file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - /etc/yum.repos.d
+    - /var/cache/yum
+
+- name: <r_yum_repo_t_common> create /etc/yum.repos.d directory
+  file:
+    path: /etc/yum.repos.d
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: <r_yum_repo_t_common> template base repo files into /etc/yum.repos.d/
+  template:
+    src: "{{ item }}"
+    dest: /etc/yum.repos.d/
+    owner: root
+    group: root
+    mode: "0644"
+    #validate:
+    #backup: yes
+  loop:
+    - CentOS-Base.repo.j2
+    - epel.repo.j2
