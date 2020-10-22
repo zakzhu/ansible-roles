@@ -18,7 +18,7 @@
 - name: <r_yum_repos_t_common> template base repo files into /etc/yum.repos.d/
   template:
     src: "{{ item }}"
-    dest: /etc/yum.repos.d/
+    dest: "/etc/yum.repos.d/{{ item | regex_search('(.*repo)') }}"
     owner: root
     group: root
     mode: "0644"
