@@ -27,3 +27,11 @@
     #validate:
     #backup: yes
   notify: "({{ role_name }}) restart service docker"
+
+- name: <r_docker_t_common> start service docker
+  systemd:
+    name: docker
+    # Choices: reloaded, restarted, started, stopped
+    state: started
+    enabled: yes
+    daemon_reload: yes
