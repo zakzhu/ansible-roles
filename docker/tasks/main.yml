@@ -5,6 +5,6 @@
   tags:
     - r_docker_t_common
 
-- import_tasks: t_apply_tcp_socket.yml
+- import_tasks: apply_tcp_socket.yml
   tags:
     - r_docker_t_apply_tcp_socket
