@@ -1,0 +1,29 @@
+---
+- name: <r_docker_t_common> install docker
+  yum:
+    name: "{{ item }}"
+    state: present
+    disable_gpg_check: yes
+    disable_plugin: fastestmirror
+    #allow_downgrade: yes
+  loop:
+    - docker-ce
+
+- name: <r_docker_t_common> create /etc/docker directory
+  file:
+    path: /etc/docker
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: <r_docker_t_common> template a file to /etc/docker/daemon.json
+  template:
+    src: daemon.json.j2
+    dest: /etc/docker/daemon.json
+    owner: root
+    group: root
+    mode: "0644"
+    #validate:
+    #backup: yes
+  notify: "({{ role_name }}) restart service docker"

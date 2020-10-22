@@ -1,0 +1,5 @@
+---
+# defaults file for docker
+
+# FROM TASK: <r_docker_t_common> template a file to /etc/docker/daemon.json
+mirror_accelerator: "https://lg89ddsk.mirror.aliyuncs.com"
