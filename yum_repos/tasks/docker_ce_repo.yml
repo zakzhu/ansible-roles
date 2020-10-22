@@ -1,0 +1,10 @@
+---
+- name: <r_yum_repos_t_docker_ce_repo> template a file to /etc/yum.repos.d/docker-ce.repo
+  template:
+    src: docker-ce.repo.j2
+    dest: /etc/yum.repos.d/docker-ce.repo
+    owner: root
+    group: root
+    mode: "0644"
+    #validate:
+    #backup: yes

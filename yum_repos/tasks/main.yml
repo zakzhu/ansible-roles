@@ -3,8 +3,8 @@
 
 - import_tasks: common.yml
   tags:
-    - r_yum_repo_t_common
+    - r_yum_repos_t_common
 
 - import_task: docker_ce_repo.yml
   tags:
-    - r_yum_repo
+    - r_yum_repos_t_docker_ce_repo
