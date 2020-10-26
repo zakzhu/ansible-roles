@@ -5,7 +5,7 @@
 banner: YOUR COMPONEY
 
 # FROM TASK: <r_ascii_banner_t_common> template a file to /etc/motd
-RED: "[1;31;49m"
+#RED: "[1;31;49m"
 #GREEN: "[1;32;49m"
 YELLOW: "[1;33;49m"
 #BLUE: "[1;34;49m"
