@@ -7,7 +7,7 @@
     - /etc/yum.repos.d
     - /var/cache/yum
 
-- name: <r_yum_repos_t_common> create /etc/yum.repos.d directory
+- name: <r_yum_repos_t_common> create directory /etc/yum.repos.d
   file:
     path: /etc/yum.repos.d
     state: directory
