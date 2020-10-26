@@ -1,0 +1,10 @@
+---
+# defaults file for ascii_banner
+
+# FROM TASK: <r_ascii_banner_t_common> generate ascii art banner
+banner: YOUR COMPONEY
+
+# FROM TASK: <r_ascii_banner_t_common> template a file to /etc/motd
+
+color: ""
+neutral: ""
