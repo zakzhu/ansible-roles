@@ -1,0 +1,11 @@
+---
+- name: <r_prompt_t_common> template a file to /etc/profile.d/ps1.sh
+  template:
+    src: ps1.sh.j2
+    dest: /etc/profile.d/ps1.sh
+    owner: root
+    group: root
+    mode: "0644"
+    #validate:
+    #backup: yes
+  notify: source profile

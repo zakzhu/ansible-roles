@@ -1,0 +1,6 @@
+---
+# tasks file for prompt
+
+- import_tasks: common.yml
+  tags:
+    - r_prompt_t_common

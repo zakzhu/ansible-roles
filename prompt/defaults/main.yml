@@ -1,0 +1,51 @@
+---
+# defaults file for prompt
+
+# FROM TASK: <r_prompt_t_common> template a file to /etc/profile/ps1.sh
+RED: "\\[\\e[31;49m\\]"
+#GREEN: "\\[\\e[32;49m\\]"
+YELLOW: "\\[\\e[33;49m\\]"
+#BLUE: "\\[\\e[34;49m\\]"
+#MAGENTA: "\\[\\e[35;49m\\]"
+CYAN: "\\[\\e[36;49m\\]"
+
+u_color: "{{ RED }}"
+h_color: "{{ CYAN }}"
+w_color: "{{ YELLOW }}"
+#t_color: ""
+neutral: "\\[\\e[0m\\]"
+
+p_user: |-
+  {%- if u_color is defined -%}
+    {{ u_color }}\u{{ neutral }}
+  {%- else -%}
+    \u
+  {%- endif -%}
+
+p_host: |-
+  {%- if h_color is defined -%}
+    {{ h_color }}\H{{ neutral }}
+  {%- else -%}
+    \H
+  {%- endif -%}
+
+p_workdir: |-
+  {%- if w_color is defined -%}
+    {{ w_color }}\w{{ neutral }}
+  {%- else -%}
+    \w
+  {%- endif -%}
+
+p_time: |-
+  {%- if t_color is defined -%}
+    {{ t_color }}\t{{ neutral }}
+  {%- else -%}
+    \t
+  {%- endif -%}
+
+#p_f1: "[{{ p_user }}@{{ p_host }} {{ p_workdir }} {{ p_time }}]\\n\\\\$ "
+p_f2: "[{{ p_user }}@{{ p_host }} {{ p_time }} {{ p_workdir }}]\\n\\\\$ "
+#p_f3: "[{{ p_time }} {{ p_user }}@{{ p_host }} {{ p_workdir }}]\\n\\\\$ "
+
+prompt_format: "{{ p_f2 }}"
+ps1: "{{ prompt_format }}"
