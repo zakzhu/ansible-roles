@@ -1,0 +1,6 @@
+---
+# tasks file for data_volumes
+
+- import_tasks: common.yml
+  tags:
+    - pr_r_data_volumes_t_common
