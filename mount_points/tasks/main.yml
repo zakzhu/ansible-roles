@@ -1,0 +1,6 @@
+---
+# tasks file for mount_points
+
+- import_tasks: common.yml
+  tags:
+    - r_mount_points_t_common

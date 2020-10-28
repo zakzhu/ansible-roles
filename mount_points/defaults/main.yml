@@ -1,0 +1,8 @@
+---
+# defaults file for mount_points
+
+# FROM TASK: <r_mount_points_t_common> mount up devices
+mount_map:
+  pm1:
+    point: /d01 # mount point path
+    volume: data_1 # volume label

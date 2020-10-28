@@ -5,4 +5,4 @@
 volume_map:
   v1:
     device: /dev/sdb
-    label: data1
+    label: data_1
