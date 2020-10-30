@@ -1,0 +1,4 @@
+---
+# handlers file for alias_profile
+
+- import_tasks: from_common.yml

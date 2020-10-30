@@ -1,0 +1,25 @@
+---
+- name: <r_alias_profile_t_common> create directory /etc/profile.d/alias.d
+  file:
+    path: /etc/profile.d/alias.d
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: <r_alias_profile_t_common> copy a file to /etc/profile.d/alias.sh
+  copy:
+    # if path ends with "/", only inside contents of that
+    # directory are copied to destination.
+    # if it does not end with "/", the directory itself
+    # with all contents is copied.
+    src: alias.sh
+    dest: /etc/profile.d/alias.sh
+    owner: root
+    group: root
+    mode: "0644"
+    #backup: yes
+    # The validation command to run before copying into place.
+    # E.g. `validate: /usr/sbin/visudo -csf %s`
+    #validate:
+  notify: source profile
