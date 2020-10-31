@@ -4,7 +4,7 @@
 # If you want to create a command alias, please 
 # write a custom.sh shell script in /etc/profile.d/alias.d/
 
-for i in /etc/alias.d/*.sh ; do
+for i in /etc/profile.d/alias.d/*.sh ; do
     if [ -r "$i" ]; then
         if [ "${-#*i}" != "$-" ]; then 
             . "$i"
