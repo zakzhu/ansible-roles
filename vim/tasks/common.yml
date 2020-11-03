@@ -1,5 +1,5 @@
 ---
-- name: <r_vim_t_common>
+- name: <r_vim_t_common> install vim
   yum:
     name: "{{ item }}"
     state: present
