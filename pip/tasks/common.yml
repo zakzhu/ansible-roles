@@ -1,0 +1,16 @@
+---
+- name: <r_pip_t_common> install pip
+  yum:
+    name: "{{ pip_pkg }}"
+    state: present
+    update_cache: yes
+    disable_gpg_check: yes
+    disable_plugin: fastestmirror
+    #allow_downgrade: yes
+  vars:
+    pip_pkg: |-
+      {%- if -%}
+        python2-pip
+      {%- elif -%}
+        python3-pip
+      {%- endif -%}
