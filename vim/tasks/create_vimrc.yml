@@ -1,0 +1,31 @@
+---
+- name: <r_vim_t_create_vimrc> create directory /tmp/vimbak
+  file:
+    path: /tmp/vimbak
+    state: directory
+    owner: root
+    group: root
+    mode: "1777"
+
+- name: <r_vim_t_create_vimrc> copy a file to /root/.vimrc and /etc/skel/.vimrc
+  copy:
+    # if path ends with "/", only inside contents of that
+    # directory are copied to destination.
+    # if it does not end with "/", the directory itself
+    # with all contents is copied.
+    src: dot_vimrc.vim
+    dest: "{{ i }}"
+    owner: root
+    group: root
+    mode: "0644"
+    #backup: yes
+    # The validation command to run before copying into place.
+    # E.g. `validate: /usr/sbin/visudo -csf %s`
+    #validate:
+  loop:
+    - /root
+    - /etc/skel
+  loop_control:
+    label: "{{ i }}"
+  vars:
+    i: "{{ item }}/.vimrc"
