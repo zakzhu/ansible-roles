@@ -8,9 +8,10 @@
     disable_plugin: fastestmirror
     #allow_downgrade: yes
   vars:
+    os_version: "{{ ansible_facts['distribution']}}-{{ ansible_facts['distribution_major_version'] }}"
     pip_pkg: |-
-      {%- if -%}
+      {%- if os_version == "CentOS-7" -%}
         python2-pip
-      {%- elif -%}
+      {%- elif os_version == "CentOS-8" -%}
         python3-pip
       {%- endif -%}
