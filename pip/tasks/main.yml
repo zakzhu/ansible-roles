@@ -4,3 +4,7 @@
 - import_tasks: common.yml
   tags:
     - r_pip_t_common
+
+- import_tasks: create_config.yml
+  tags:
+    - r_pip_t_create_config

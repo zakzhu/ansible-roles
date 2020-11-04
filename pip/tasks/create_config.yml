@@ -1,0 +1,10 @@
+---
+- name: <r_pip_t_create_config> template a file to DEST
+  template:
+    src: pip.config.j2
+    dest:
+    owner: root
+    group: root
+    mode: "0644"
+    #validate:
+    #backup: yes
