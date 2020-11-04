@@ -28,7 +28,7 @@ secondary_groups:
 #     comment:
 #     uid:
 #     # optionally sets the user's primary group
-#     primary_group:
+#     primary_groups:
 #     # type: list
 #     secondary_groups:
 #       - group3
