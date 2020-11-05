@@ -1,11 +1,11 @@
 ---
-- name: <r_yum_repos_t_common> remove /etc/yum.repos.d and /var/cache/yum
+- name: <r_yum_repos_t_common> remove yum repo dir and cache
   file:
     path: "{{ item }}"
     state: absent
   loop:
     - /etc/yum.repos.d
-    - /var/cache/yum
+    - "{{ /var/cache/dnf if os_major == '8' else /var/cache/yum }}"
 
 - name: <r_yum_repos_t_common> create directory /etc/yum.repos.d
   file:
@@ -15,15 +15,12 @@
     group: root
     mode: "0755"
 
-- name: <r_yum_repos_t_common> template base repo files into /etc/yum.repos.d/
+- name: <r_yum_repos_t_common> template a file to /etc/yum.repos.d/Centos-Base.repo
   template:
-    src: "{{ item }}"
-    dest: "/etc/yum.repos.d/{{ item | regex_search('(.*repo)') }}"
+    src: "{{ os_version }}.repo.j2"
+    dest: /etc/yum.repos.d/Centos-Base.repo
     owner: root
     group: root
     mode: "0644"
     #validate:
     #backup: yes
-  loop:
-    - CentOS-Base.repo.j2
-    - epel.repo.j2
