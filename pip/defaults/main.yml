@@ -1,2 +1,19 @@
 ---
 # defaults file for pip
+
+# FROM TASKS: <r_pip_t_create_config> template a file to /etc/pip.conf
+# https://mirrors.aliyun.com/pypi/simple/
+# https://mirrors.cloud.tencent.com/pypi/simple
+# https://mirrors.huaweicloud.com/repository/pypi/simple
+# https://mirrors.163.com/pypi/simple/
+# https://pypi.tuna.tsinghua.edu.cn/simple
+# https://mirrors.ustc.edu.cn/pypi/web/simple
+index_url: https://mirrors.aliyun.com/pypi/simple/
+
+# mirrors.aliyun.com
+# mirrors.cloud.tencent.com
+# mirrors.huaweicloud.com
+# mirrors.163.com
+# pypi.tuna.tsinghua.edu.cn
+# mirrors.ustc.edu.cn
+trusted-host: mirrors.aliyun.com
