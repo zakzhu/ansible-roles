@@ -16,4 +16,4 @@ index_url: https://mirrors.aliyun.com/pypi/simple/
 # mirrors.163.com
 # pypi.tuna.tsinghua.edu.cn
 # mirrors.ustc.edu.cn
-trusted-host: mirrors.aliyun.com
+trusted_host: mirrors.aliyun.com
