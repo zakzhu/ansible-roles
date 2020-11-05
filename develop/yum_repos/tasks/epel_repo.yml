@@ -1,7 +1,7 @@
 ---
 - name: <r_yum_repos_t_epel_repo> template a file to /etc/yum.repos.d/epel.repo
   template:
-    src: epel.repo
+    src: "epel-{{ os_major }}.j2"
     dest: /etc/yum.repos.d/epel.repo
     owner: root
     group: root
