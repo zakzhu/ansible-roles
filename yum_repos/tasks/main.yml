@@ -5,10 +5,6 @@
   tags:
     - r_yum_repos_t_common
 
-- import_tasks: plugin_config.yml
-  tags:
-    - r_yum_repos_t_plugin_config
-
 - import_tasks: epel_repo.yml
   tags:
     - r_yum_repos_t_epel_repo
