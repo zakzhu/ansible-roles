@@ -1,7 +1,13 @@
 ---
 # defaults file for yum_repos
 
-# FROM TASK: yum_repos/tasks/common.yml
 os_distro: "{{ ansible_facts['distribution'] }}"
 os_major: "{{ ansible_facts['distribution_major_version'] }}"
 os_version: "{{ os_distro }}-{{ os_major }}"
+
+mirrors_host:
+  - mirrors.aliyun.com
+  - mirrors.cloud.tencent.com
+  - mirrors.huaweicloud.com
+  - mirrors.tuna.tsinghua.edu.cn
+  - mirrors.ustc.edu.cn
