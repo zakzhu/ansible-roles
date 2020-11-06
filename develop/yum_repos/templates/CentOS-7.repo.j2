@@ -2,9 +2,9 @@
 name=CentOS-$releasever - Base
 failovermethod=priority
 baseurl=
-    {% for i in mirrors_hosts %}
-        http://{{ i }}/centos/$releasever/os/$basearch/
-    {% endfor %}
+{% for i in mirrors_hosts %}
+    http://{{ i }}/centos/$releasever/os/$basearch/
+{% endfor %}
 enabled=1
 gpgcheck=0
 
@@ -13,9 +13,9 @@ gpgcheck=0
 name=CentOS-$releasever - Updates
 failovermethod=priority
 baseurl=
-    {% for i in mirrors_hosts %}
-        http://{{ i }}/centos/$releasever/updates/$basearch/
-    {% endfor %}
+{% for i in mirrors_hosts %}
+    http://{{ i }}/centos/$releasever/updates/$basearch/
+{% endfor %}
 enabled=1
 gpgcheck=0
 
@@ -24,9 +24,9 @@ gpgcheck=0
 name=CentOS-$releasever - Extras
 failovermethod=priority
 baseurl=
-    {% for i in mirrors_hosts %}
-        http://{{ i }}/centos/$releasever/extras/$basearch/
-    {% endfor %}
+{% for i in mirrors_hosts %}
+    http://{{ i }}/centos/$releasever/extras/$basearch/
+{% endfor %}
 enabled=1
 gpgcheck=0
 
@@ -35,9 +35,9 @@ gpgcheck=0
 name=CentOS-$releasever - Plus
 failovermethod=priority
 baseurl=
-    {% for i in mirrors_hosts %}
-        http://{{ i }}/centos/$releasever/centosplus/$basearch/
-    {% endfor %}
+{% for i in mirrors_hosts %}
+    http://{{ i }}/centos/$releasever/centosplus/$basearch/
+{% endfor %}
 enabled=0
 gpgcheck=0
 
@@ -46,8 +46,8 @@ gpgcheck=0
 name=CentOS-$releasever - Contrib
 failovermethod=priority
 baseurl=
-    {% for i in mirrors_hosts %}
-        http://{{ i }}/centos/$releasever/contrib/$basearch/
-    {% endfor %}
+{% for i in mirrors_hosts %}
+    http://{{ i }}/centos/$releasever/contrib/$basearch/
+{% endfor %}
 enabled=0
 gpgcheck=0

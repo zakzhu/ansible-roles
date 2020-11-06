@@ -5,7 +5,7 @@
     state: absent
   loop:
     - /etc/yum.repos.d
-    - "{{ /var/cache/dnf if os_major == '8' else /var/cache/yum }}"
+    - "{{ '/var/cache/dnf' if os_major == '8' else '/var/cache/yum' }}"
 
 - name: <r_yum_repos_t_common> create directory /etc/yum.repos.d
   file:

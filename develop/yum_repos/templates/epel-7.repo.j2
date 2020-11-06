@@ -2,8 +2,8 @@
 name=Extra Packages for Enterprise Linux $releasever - $basearch
 failovermethod=priority
 baseurl=
-    {% for i in mirrors_hosts %}
-        http://{{ i }}/epel/$releasever/$basearch
-    {% endfor %}
+{% for i in mirrors_hosts %}
+    http://{{ i }}/epel/$releasever/$basearch
+{% endfor %}
 enabled=1
 gpgcheck=0

@@ -8,8 +8,8 @@ os_version: "{{ os_distro }}-{{ os_major }}"
 #priority_host:
 
 mirrors_hosts:
-  - "{{ priority_host if priority_host is defined else mirrors.aliyun.com}}"
-  - mirrors.cloud.tencent.com
-  - mirrors.huaweicloud.com
-  - mirrors.tuna.tsinghua.edu.cn
-  - mirrors.ustc.edu.cn
+  - "{{ priority_host if priority_host is defined else 'mirrors.aliyun.com' }}"
+  - "mirrors.cloud.tencent.com"
+  - "mirrors.huaweicloud.com"
+  - "mirrors.tuna.tsinghua.edu.cn"
+  - "mirrors.ustc.edu.cn"

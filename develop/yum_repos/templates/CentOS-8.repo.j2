@@ -2,9 +2,9 @@
 name=CentOS-$releasever - Base
 failovermethod=priority
 baseurl=
-    {% for i in mirrors_hosts %}
-        https://{{ i }}/centos/$releasever/BaseOS/$basearch/os/
-    {% endfor %}
+{% for i in mirrors_hosts %}
+    https://{{ i }}/centos/$releasever/BaseOS/$basearch/os/
+{% endfor %}
 enabled=1
 gpgcheck=0
  
@@ -13,9 +13,9 @@ gpgcheck=0
 name=CentOS-$releasever - Extras
 failovermethod=priority
 baseurl=
-    {% for i in mirrors_hosts %}
-        https://{{ i }}/centos/$releasever/extras/$basearch/os/
-    {% endfor %}
+{% for i in mirrors_hosts %}
+    https://{{ i }}/centos/$releasever/extras/$basearch/os/
+{% endfor %}
 enabled=1
 gpgcheck=0
  
@@ -24,9 +24,9 @@ gpgcheck=0
 name=CentOS-$releasever - Plus
 failovermethod=priority
 baseurl=
-    {% for i in mirrors_hosts %}
-        https://{{ i }}/centos/$releasever/centosplus/$basearch/os/
-    {% endfor %}
+{% for i in mirrors_hosts %}
+    https://{{ i }}/centos/$releasever/centosplus/$basearch/os/
+{% endfor %}
 enabled=0
 gpgcheck=0
  
@@ -34,9 +34,9 @@ gpgcheck=0
 name=CentOS-$releasever - PowerTools
 failovermethod=priority
 baseurl=
-    {% for i in mirrors_hosts %}
-        https://{{ i }}/centos/$releasever/PowerTools/$basearch/os/
-    {% endfor %}
+{% for i in mirrors_hosts %}
+    https://{{ i }}/centos/$releasever/PowerTools/$basearch/os/
+{% endfor %}
 enabled=0
 gpgcheck=0
 
@@ -44,8 +44,8 @@ gpgcheck=0
 name=CentOS-$releasever - AppStream
 failovermethod=priority
 baseurl=
-    {% for i in mirrors_hosts %}
-        https://{{ i }}/centos/$releasever/AppStream/$basearch/os/
-    {% endfor %}
+{% for i in mirrors_hosts %}
+    https://{{ i }}/centos/$releasever/AppStream/$basearch/os/
+{% endfor %}
 enabled=1
 gpgcheck=0
