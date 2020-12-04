@@ -1,0 +1,17 @@
+# Set history time format
+export HISTTIMEFORMAT="%F %T "
+
+# Maximum number of history lines in memory
+export HISTSIZE={{ hist_size }}
+
+# Maximum number of history lines on disk
+export HISTFILESIZE={{ hist_file_size }}
+
+# Don't ignore duplicate lines
+unset HISTCONTROL
+
+# When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+
+# After each command, append to the history file and reread it
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"

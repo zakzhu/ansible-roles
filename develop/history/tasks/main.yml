@@ -1,2 +1,6 @@
 ---
 # tasks file for history
+
+- import_tasks: common.yml
+  tags:
+    - r_history_t_common
