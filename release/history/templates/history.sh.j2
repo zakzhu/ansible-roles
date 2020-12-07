@@ -10,6 +10,9 @@ export HISTFILESIZE={{ hist_file_size }}
 # Don't ignore duplicate lines
 unset HISTCONTROL
 
+# Ignore commands
+export HISTIGNORE="history"
+
 # Store multi-line commands in one history entry
 shopt -s cmdhist
 
