@@ -12,3 +12,7 @@
 - import_tasks: docker_ce_repo.yml
   tags:
     - r_yum_repos_t_docker_ce_repo
+
+- import_tasks: update.yml
+  tags:
+    - r_yum_repos_t_update
