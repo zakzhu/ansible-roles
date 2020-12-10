@@ -1,4 +1,2 @@
 ---
 # handlers file for history
-
-- import_tasks: from_common.yml
