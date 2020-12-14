@@ -8,6 +8,7 @@ package:
   name:
   version:
   checksum:
+  type:
 
 package_fullname: "{{ package['name'].capitalize() }}-{{ package['version'] }}"
 package_tarball: "{{ package_fullname }}.tar.xz"
