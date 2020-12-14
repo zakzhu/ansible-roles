@@ -1,0 +1,18 @@
+---
+# defaults file for get_pkg
+
+# FROM TASK: "<r_get_pkg_t_copy_local> copy a {{ package_tarball }} to /tmp/"
+# FROM TASK: "<r_get_pkg_t_copy_remote> download file {{ package_tarball }}"
+# FROM TASK: "<r_get_pkg_t_common> verify checksum of {{ package_tarball }}"
+package:
+  name:
+  version:
+  checksum:
+
+package_fullname: "{{ package['name'].capitalize() }}-{{ package['version'] }}"
+package_tarball: "{{ package_fullname }}.tar.xz"
+
+package_url:
+
+# FROM TASK: "<r_get_pkg_t_common> calculate checksum of {{ package_tarball }}"
+dgst_algo:
