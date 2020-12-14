@@ -47,6 +47,14 @@
 
 - when: package['type'] == 'source'
   block:
+    - name: "<r_get_pkg_t_common> create directory {{ deploy_root }}/src"
+      file:
+        path: "{{ deploy_root }}/src"
+        state: directory
+        owner: root
+        group: root
+        mode: "0755"
+
     - name: "<r_get_pkg_t_common> extract /tmp/{{ package_tarball }} into {{ deploy_root }}/src/"
       unarchive:
         src: "/tmp/{{ package_tarball }}"
