@@ -8,6 +8,7 @@ package:
   name:
   version:
   checksum:
+  # Choices: source, binary
   type:
 
 package_fullname: "{{ package['name'].capitalize() }}-{{ package['version'] }}"

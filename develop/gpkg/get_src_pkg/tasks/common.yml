@@ -24,13 +24,36 @@
   vars:
     checksum: "{{ checksum_result['stdout'].split('= ')[1] }}"
 
-- name: "<r_get_pkg_t_common> extract /tmp/{{ package_tarball }} into /usr/local/src/"
-  unarchive:
-    src: "/tmp/{{ package_tarball }}"
-    dest: /usr/local/src/
-    #owner:
-    #group:
-    #mode:
-    # If the specified absolute path (file or directory) already
-    # exists, this step will *not* be run.
-    #creates:
+- when: package['type'] == 'binary'
+  block:
+    - name: "<r_get_pkg_t_common> create directory /usr/local/install/{{ package_fullname }}"
+      file:
+        path: "/usr/local/install/{{ package_fullname }}"
+        state: directory
+        owner: root
+        group: root
+        mode: "0755"
+
+    - name: "<r_get_pkg_t_common> extract /tmp/{{ package_tarball }} into /usr/local/install/{{ package_fullname }}"
+      unarchive:
+        src: "/tmp/{{ package_tarball }}"
+        dest: "/usr/local/install/{{ package_fullname }}"
+        #owner:
+        #group:
+        #mode:
+        # If the specified absolute path (file or directory) already
+        # exists, this step will *not* be run.
+        #creates:
+
+- when: package['type'] == 'source'
+  block:
+    - name: "<r_get_pkg_t_common> extract /tmp/{{ package_tarball }} into /usr/local/src/"
+      unarchive:
+        src: "/tmp/{{ package_tarball }}"
+        dest: /usr/local/src/
+        #owner:
+        #group:
+        #mode:
+        # If the specified absolute path (file or directory) already
+        # exists, this step will *not* be run.
+        #creates:
