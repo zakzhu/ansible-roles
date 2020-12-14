@@ -26,18 +26,18 @@
 
 - when: package['type'] == 'binary'
   block:
-    - name: "<r_get_pkg_t_common> create directory /usr/local/install/{{ package_fullname }}"
+    - name: "<r_get_pkg_t_common> create directory {{ deploy_root }}/install/{{ package_fullname }}"
       file:
-        path: "/usr/local/install/{{ package_fullname }}"
+        path: "{{ deploy_root }}/install/{{ package_fullname }}"
         state: directory
         owner: root
         group: root
         mode: "0755"
 
-    - name: "<r_get_pkg_t_common> extract /tmp/{{ package_tarball }} into /usr/local/install/{{ package_fullname }}"
+    - name: "<r_get_pkg_t_common> extract /tmp/{{ package_tarball }} into {{ deploy_root }}/install/{{ package_fullname }}"
       unarchive:
         src: "/tmp/{{ package_tarball }}"
-        dest: "/usr/local/install/{{ package_fullname }}"
+        dest: "{{ deploy_root }}/install/{{ package_fullname }}"
         #owner:
         #group:
         #mode:
@@ -47,10 +47,10 @@
 
 - when: package['type'] == 'source'
   block:
-    - name: "<r_get_pkg_t_common> extract /tmp/{{ package_tarball }} into /usr/local/src/"
+    - name: "<r_get_pkg_t_common> extract /tmp/{{ package_tarball }} into {{ deploy_root }}/src/"
       unarchive:
         src: "/tmp/{{ package_tarball }}"
-        dest: /usr/local/src/
+        dest: "{{ deploy_root }}/src/"
         #owner:
         #group:
         #mode:

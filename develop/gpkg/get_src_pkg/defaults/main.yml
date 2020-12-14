@@ -1,6 +1,8 @@
 ---
 # defaults file for get_pkg
 
+deploy_root:
+
 # FROM TASK: "<r_get_pkg_t_copy_local> copy a {{ package_tarball }} to /tmp/"
 # FROM TASK: "<r_get_pkg_t_copy_remote> download file {{ package_tarball }}"
 # FROM TASK: "<r_get_pkg_t_common> verify checksum of {{ package_tarball }}"
