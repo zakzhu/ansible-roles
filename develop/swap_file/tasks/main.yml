@@ -1,0 +1,6 @@
+---
+# tasks file for swap_file
+
+- import_tasks: common.yml
+  tags:
+    - pr_r_swap_file_t_common

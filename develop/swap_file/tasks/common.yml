@@ -1,0 +1,59 @@
+---
+- name: <pr_r_swap_file_t_common> touch /swapfile file
+  file:
+    path: /swapfile
+    state: touch
+    owner: root
+    group: root
+    mode: "0600"
+    access_time: preserve
+    modification_time: preserve
+  when: swap_total_mb == '0'
+
+- name: <pr_r_swap_file_t_common> set up a swap file
+  command:
+    cmd: "dd if=/dev/zero of=/swapfile bs=1M count={{ swap_size }}"
+    #chdir:
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *won't* be run.
+    #creates:
+
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *will* be run.
+    #remove:
+  when: swap_total_mb == '0'
+
+- name: <pr_r_swap_file_t_common> create a swap filesystem
+  filesystem:
+    fstype: swap
+    dev: /swapfile
+    #opts:
+  when: swap_total_mb == '0'
+
+- name: <pr_r_swap_file_t_common> add swap mount line to /etc/fstab
+  lineinfile:
+    path: /etc/fstab
+    state: present
+    insertafter: EOF
+    line: |-
+      /swapfile swap swap defaults 0 0
+    #backup: yes
+
+    # The validation command to run before copying into place.
+    # The path to the file to validate is passed in via '%s'
+    # which must be present as in the examples below.
+    #validate:
+  when: swap_total_mb == '0'
+
+- name: <pr_r_swap_file_t_common> mount up /swapfile
+  command:
+    cmd: swapon /swapfile
+    #chdir:
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *won't* be run.
+    #creates:
+
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *will* be run.
+    #remove:
+  when: swap_total_mb == '0'
