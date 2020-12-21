@@ -1,0 +1,13 @@
+---
+- name: <>
+  cron:
+    name: "{{}}"
+    minute: "{{}}"
+    hour: "{{}}"
+    day: "{{}}"
+    month: "{{}}"
+    weekday: "{{}}"
+    user:
+    job:
+    cron_file:
+    state: present

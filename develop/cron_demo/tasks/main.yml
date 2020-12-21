@@ -1,2 +1,6 @@
 ---
 # tasks file for cron_demo
+
+- import_tasks: common.yml
+  tags:
+    - r_cron_t_common
