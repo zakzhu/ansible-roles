@@ -1,2 +1,4 @@
 ---
 # handlers file for ssh_setup
+
+- import_tasks: from_server_config.yml
