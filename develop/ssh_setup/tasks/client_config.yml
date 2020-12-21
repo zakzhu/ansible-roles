@@ -1,1 +1,25 @@
 ---
+- name: <r_ssh_setup_t_client_config> create directory /etc/ssh/ssh_config.d
+  file:
+    path: /etc/ssh/ssh_config.d
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+    #recurse: yes
+
+- name: <r_ssh_setup_t_client_config> copy a file to /etc/ssh/ssh_config
+  copy:
+    # if path ends with "/", only inside contents of that
+    # directory are copied to destination.
+    # if it does not end with "/", the directory itself
+    # with all contents is copied.
+    src: ssh_config
+    dest: /etc/ssh/ssh_config
+    owner: root
+    group: root
+    mode: "0644"
+    #backup: yes
+    # The validation command to run before copying into place.
+    # E.g. `validate: /usr/sbin/visudo -csf %s`
+    #validate:
