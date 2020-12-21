@@ -1,16 +1,18 @@
 ---
 - name: <>
   cron:
-    name: "{{ item['name'] }}"
-    minute: "{{ item['minute'] | default('*') }}"
-    hour: "{{ item['hour'] | default('*') }}"
-    day: "{{ item['day'] | default('*') }}"
-    month: "{{ item['month'] | default('*') }}"
-    weekday: "{{ item['weekday'] | default('*') }}"
+    name: "{{ v['name'] }}"
+    minute: "{{ v['minute'] | default('*') }}"
+    hour: "{{ v['hour'] | default('*') }}"
+    day: "{{ v['day'] | default('*') }}"
+    month: "{{ v['month'] | default('*') }}"
+    weekday: "{{ v['weekday'] | default('*') }}"
     # Choices: annually, daily, hourly, monthly, reboot, weekly, yearly
-    special_time: "{{ item['special_time'] | default(omit) }}"
-    user: "{{ item['user'] }}"
-    job: "{{ item['job'] }}"
-    cron_file: "{{ item['cron_file'] }}"
+    special_time: "{{ v['special_time'] | default(omit) }}"
+    user: "{{ v['user'] }}"
+    job: "{{ v['job'] }}"
+    cron_file: "{{ v['cron_file'] }}"
     state: present
-  loop: "{{ crontab }}"
+  loop: "{{ crontab | dict2items }}"
+  vars:
+    v: "{{ item.value }}"
