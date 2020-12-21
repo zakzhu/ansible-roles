@@ -1,2 +1,14 @@
 ---
 # tasks file for ssh_setup
+
+- import_tasks: common.yml
+  tags:
+    - r_ssh_setup_t_common
+
+- import_tasks: server_config.yml
+  tags:
+    - r_ssh_setup_t_server_config
+
+- import_tasks: client_config.yml
+  tags:
+    - r_ssh_setup_t_client_config
