@@ -2,13 +2,13 @@
 # defaults file for cron_demo
 
 crontab:
-  - cron1:
-      name: update yum cache
-      minute: "0"
-      hour: "23"
-      day: "*"
-      month: "*"
-      weekday: "0"
-      user: root
-      job: "/bin/yum makecache &> /dev/null"
-      cron_file: "ansible_{{ role_name }}"
+  cron1:
+    name: update yum cache
+    minute: "0"
+    hour: "23"
+    day: "*"
+    month: "*"
+    weekday: "0"
+    user: root
+    job: "/bin/yum makecache &> /dev/null"
+    cron_file: "ansible_{{ role_name }}"

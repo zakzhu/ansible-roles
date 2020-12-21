@@ -12,4 +12,4 @@ crontab:
       special_time:
       user:
       job:
-      cron_file:
+      cron_file: "ansible_{{ role_name }}"
