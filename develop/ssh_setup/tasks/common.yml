@@ -1,0 +1,8 @@
+---
+- name: <r_ssh_setup_t_common> install the openssh package
+  yum:
+    name: openssh
+    state: present
+    update_cache: yes
+    disable_gpg_check: yes
+    #allow_downgrade: yes
