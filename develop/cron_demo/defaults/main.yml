@@ -1,2 +1,15 @@
 ---
 # defaults file for cron_demo
+
+crontab:
+  - cron1:
+      name:
+      minute:
+      hour:
+      day:
+      month:
+      weekday:
+      special_time:
+      user:
+      job:
+      cron_file:
