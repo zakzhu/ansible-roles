@@ -1,5 +1,5 @@
 ---
-- name: <>
+- name: <r_yum_cron_t_common> update yum cache periodically
   cron:
     name: "{{ item['name'] }}"
     minute: "{{ item['minute'] | default('*') }}"

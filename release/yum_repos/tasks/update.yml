@@ -8,15 +8,3 @@
     update_cache: yes
     disable_gpg_check: yes
     #allow_downgrade: yes
-
-- name: <r_yum_repos_t_update> update yum cache daily
-  cron:
-    name: update yum cache
-    minute: "0"
-    hour: "23"
-    day: "*"
-    month: "*"
-    weekday: "*"
-    job: /bin/yum makecache &> /dev/null
-    user: root
-    state: present
