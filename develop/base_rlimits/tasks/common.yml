@@ -1,5 +1,5 @@
 ---
-- name: <r_base_rlimits_t_common>
+- name: <r_base_rlimits_t_common> add base resource limits for system
   pam_limits:
     domain: "{{ v['domain'] }}"
     value: "{{ v['value'] }}"
