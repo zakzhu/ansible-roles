@@ -1,8 +1,0 @@
----
-- name: "({{ role_name }}) restart service sshd"
-  systemd:
-    name: sshd
-    # Choices: reloaded, restarted, started, stopped
-    state: restarted
-    enabled: yes
-    #daemon_reload: yes

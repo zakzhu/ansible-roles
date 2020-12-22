@@ -1,4 +1,0 @@
----
-# handlers file for sshd_config
-
-- import_tasks: from_common.yml
