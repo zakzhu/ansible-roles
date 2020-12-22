@@ -4,3 +4,6 @@
 - import_tasks: common.yml
   tags:
     - r_rlimits_t_common
+
+- import_tasks: delete.yml
+    - r_rlimits_t_delete
