@@ -1,0 +1,8 @@
+---
+- name: <r_rlimits_t_common>
+  pam_limits:
+    domain: undefined # required. A username, @groupname, wildcard, uid/gid range.
+    value: undefined # required. The value of the limit.
+    limit_item: core # required. choices: core;data;fsize;memlock;nofile;rss;stack;cpu;nproc;as;maxlogins;maxsyslogins;priority;locks;sigpending;msgqueue;nice;rtprio;chroot. The limit to be set
+    limit_type: hard # required. choices: hard;soft;-. Limit type, see C(man 5 limits.conf) for an explanation
+    dest:
