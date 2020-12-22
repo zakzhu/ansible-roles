@@ -1,3 +1,0 @@
-- def_resource_limit role 开发
-- reource_limit role 变量
-- docker role 持续改进

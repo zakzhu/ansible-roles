@@ -1,2 +1,10 @@
 ---
 # defaults file for rlimits
+
+limits:
+  entry1:
+    domain:
+    value:
+    item:
+    type:
+    file:
