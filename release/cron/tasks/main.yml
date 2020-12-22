@@ -1,5 +1,5 @@
 ---
-# tasks file for cron_demo
+# tasks file for cron
 
 - import_tasks: common.yml
   tags:
