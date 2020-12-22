@@ -13,8 +13,17 @@
 
 limits:
   entry1:
-    domain:
-    value:
-    item:
-    type:
-    file:
+    domain: "*"
+    value: 65535
+    item: core
+    type: "-"
+  entry2:
+    domain: "*"
+    value: 65535
+    item: nofile
+    type: "-"
+  entry3:
+    domain: "*"
+    value: 65535
+    item: nproc
+    type: "-"

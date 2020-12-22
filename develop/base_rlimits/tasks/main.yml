@@ -3,7 +3,7 @@
 
 - import_tasks: common.yml
   tags:
-    - r_rlimits_t_common
+    - r_base_rlimits_t_common
 
 - import_tasks: delete.yml
-    - r_rlimits_t_delete
+    - r_base_rlimits_t_delete

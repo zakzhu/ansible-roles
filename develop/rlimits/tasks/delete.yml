@@ -1,5 +1,5 @@
 ---
-- name: <r_rlimits_t_delete> remove 20-nproc.conf
+- name: <> remove 20-nproc.conf
   file:
     path: /etc/security/limits.d/20-nproc.conf
     state: absent
