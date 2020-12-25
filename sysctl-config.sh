@@ -27,10 +27,7 @@ ARCH=$(uname -m)
 which bc
 if [ $? -ne 0 ]; then
     echo "This script require GNU bc, cf. http://www.gnu.org/software/bc/"
-    echo "On Linux Debian/Ubuntu you can install it by doing : apt-get install bc"
 fi
-
-echo "Update sysctl for $host"
 
 mem_bytes=$(awk '/MemTotal:/ { printf "%0.f",$2 * 1024}' /proc/meminfo)
 shmmax=$(echo "$mem_bytes * 0.90" | bc | cut -f 1 -d '.') 
@@ -49,9 +46,9 @@ else
     vm_dirty_ratio=5
 fi
  
->/etc/sysctl.conf cat << EOF 
+>/etc/60-init-base.conf cat << EOF 
 
-# Disable syncookies (syncookies are not RFC compliant and can use too muche resources)
+# Disable syncookies (syncookies are not RFC compliant and can use too much resources)
 net.ipv4.tcp_syncookies = 0
 
 # Basic TCP tuning
@@ -71,7 +68,7 @@ net.ipv4.conf.all.log_martians = 1
 
 # Minimum interval between garbage collection passes This interval is
 # in effect under high memory pressure on the pool
-net.ipv4.inet_peer_gc_mintime = 5
+#net.ipv4.inet_peer_gc_mintime = 5
 
 # Disable Explicit Congestion Notification in TCP
 net.ipv4.tcp_ecn = 0
@@ -95,14 +92,15 @@ net.ipv4.tcp_dsack = 1
 net.ipv4.ip_forward = 0
 
 # No controls source route verification (RFC1812)
+net.ipv4.conf.all.rp_filter = 0
 net.ipv4.conf.default.rp_filter = 0
 
 # Enable fast recycling TIME-WAIT sockets
-net.ipv4.tcp_tw_recycle = 1
+net.ipv4.tcp_tw_reuse = 1
 
 # TODO : change TCP_SYNQ_HSIZE in include/net/tcp.h
 # to keep TCP_SYNQ_HSIZE*16<=tcp_max_syn_backlog
-net.ipv4.tcp_max_syn_backlog = 20000
+net.ipv4.tcp_max_syn_backlog = 65536
 
 # tells the kernel how many TCP sockets that are not attached
 # to any user file handle to maintain
@@ -113,7 +111,7 @@ net.ipv4.tcp_orphan_retries = 1
 
 # how long to keep sockets in the state FIN-WAIT-2
 # if we were the one closing the socket
-net.ipv4.tcp_fin_timeout = 20
+net.ipv4.tcp_fin_timeout = 10
 
 # maximum number of sockets in TIME-WAIT to be held simultaneously
 net.ipv4.tcp_max_tw_buckets = $max_tw
@@ -129,6 +127,7 @@ net.ipv4.tcp_wmem = 4096 65536 16777216
 # increase TCP max buffer size
 net.core.rmem_max = 16777216
 net.core.wmem_max = 16777216
+net.core.optmem_max = 65536
 
 net.core.netdev_max_backlog = 2500
 net.core.somaxconn = 65000
@@ -149,11 +148,14 @@ fs.file-max = $file_max
 # Core dump suidsafe
 fs.suid_dumpable = 2 
 
+kernel.core_pattern = core.%e.%p.%t
 kernel.printk = 4 4 1 7
 kernel.core_uses_pid = 1
 kernel.sysrq = 0
 kernel.msgmax = 65536
 kernel.msgmnb = 65536
+
+kernel.pid_max = 65536
 
 # Maximum shared segment size in bytes
 kernel.shmmax = $shmmax
@@ -162,6 +164,6 @@ kernel.shmmax = $shmmax
 kernel.shmall = $shmall
 EOF
 
-/sbin/sysctl -p /etc/sysctl.conf
+/sbin/sysctl --system
 exit $?
 
