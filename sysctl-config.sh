@@ -46,7 +46,11 @@ else
     vm_dirty_ratio=5
 fi
  
->/etc/60-init-base.conf cat << EOF 
+>/etc/60-init-base.conf cat << EOF
+
+# Disable IPv6
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
 
 # Disable syncookies (syncookies are not RFC compliant and can use too much resources)
 net.ipv4.tcp_syncookies = 0
