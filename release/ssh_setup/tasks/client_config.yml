@@ -40,14 +40,14 @@
     # E.g. `validate: /usr/sbin/visudo -csf %s`
     #validate:
 
-- name: <r_ssh_setup_t_client_config> copy a file to /etc/ssh/ssh_config.d/10-init.conf
+- name: <r_ssh_setup_t_client_config> copy a file to /etc/ssh/ssh_config.d/10-init-client.conf
   copy:
     # if path ends with "/", only inside contents of that
     # directory are copied to destination.
     # if it does not end with "/", the directory itself
     # with all contents is copied.
-    src: 10-init.conf
-    dest: /etc/ssh/ssh_config.d/10-init.conf
+    src: 10-init-client.conf
+    dest: /etc/ssh/ssh_config.d/10-init-client.conf
     owner: root
     group: root
     mode: "0644"
