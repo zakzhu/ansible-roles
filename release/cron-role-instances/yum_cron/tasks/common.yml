@@ -1,5 +1,5 @@
 ---
-- name: "<r_yum_cron_t_common> create file {{ crontab['cron1']['cron_file'] }} under /etc/sysctl.d/"
+- name: "<r_yum_cron_t_common> create file {{ crontab['cron1']['cron_file'] }} under /etc/cron.d/"
   cron:
     name: "{{ v['name'] }}"
     minute: "{{ v['minute'] | default('*') }}"
