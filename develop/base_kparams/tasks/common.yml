@@ -1,16 +1,31 @@
 ---
-- name: <r_base_kparams_t_common> copy a file to DEST
+- name: <r_base_kparams_t_common> copy a file to /etc/sysctl.d/60-init-base.conf
   copy:
     # if path ends with "/", only inside contents of that
     # directory are copied to destination.
     # if it does not end with "/", the directory itself
     # with all contents is copied.
-    src:
-    dest:
-    #owner:
-    #group:
-    #mode:
+    src: init_base_sysctl.sh
+    dest: /etc/sysctl.d/
+    owner: root
+    group: root
+    mode: "0744"
     #backup: yes
     # The validation command to run before copying into place.
     # E.g. `validate: /usr/sbin/visudo -csf %s`
     #validate:
+
+- name: <r_base_kparams_t_common> initialize the base sysctl config
+  shell:
+  #become: yes
+  #become_method: su
+  #become_user:
+  #become_flags: "-s /bin/sh"
+  args:
+    cmd: ./init_bash_sysctl.sh
+    #chdir:
+    # when filename already exists, this step *won't* be run.
+    #creates:
+
+    # when filename already exists, this step *will* be run.
+    #remove:
