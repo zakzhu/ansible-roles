@@ -1,5 +1,5 @@
 ---
-- name: <r_sysctl_cron_t_common>
+- name: <r_sysctl_cron_t_common> create the sysctl cron file under /etc/cron.d
   cron:
     name: "{{ v['name'] }}"
     minute: "{{ v['minute'] | default('*') }}"
