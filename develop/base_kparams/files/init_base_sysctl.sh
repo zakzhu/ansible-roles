@@ -30,7 +30,7 @@ if [ $? -ne 0 ]; then
 fi
 
 mem_bytes=$(awk '/MemTotal:/ { printf "%0.f",$2 * 1024}' /proc/meminfo)
-shmmax=$(echo "$mem_bytes * 0.90" | bc | cut -f 1 -d '.') 
+shmmax=$(echo "$mem_bytes * 0.90" | bc | cut -f 1 -d '.')
 shmall=$(expr $mem_bytes / $(getconf PAGE_SIZE))
 max_orphan=$(echo "$mem_bytes * 0.10 / 65536" | bc | cut -f 1 -d '.')
 file_max=$(echo "$mem_bytes / 4194304 * 256" | bc | cut -f 1 -d '.')
@@ -45,7 +45,7 @@ else
     vm_dirty_bg_ratio=3
     vm_dirty_ratio=5
 fi
- 
+
 >/etc/sysctl.d/60-init-base.conf cat << EOF
 
 # Disable IPv6
@@ -104,7 +104,7 @@ net.ipv4.tcp_tw_reuse = 1
 
 # TODO : change TCP_SYNQ_HSIZE in include/net/tcp.h
 # to keep TCP_SYNQ_HSIZE*16<=tcp_max_syn_backlog
-net.ipv4.tcp_max_syn_backlog = 65536
+net.ipv4.tcp_max_syn_backlog = 20000
 
 # tells the kernel how many TCP sockets that are not attached
 # to any user file handle to maintain
@@ -125,7 +125,7 @@ net.ipv4.tcp_no_metrics_save = 1
 net.ipv4.tcp_moderate_rcvbuf = 1
 
 # increase Linux autotuning TCP buffer limits
-net.ipv4.tcp_rmem = 4096 87380 16777216 
+net.ipv4.tcp_rmem = 4096 87380 16777216
 net.ipv4.tcp_wmem = 4096 65536 16777216
 
 # increase TCP max buffer size
@@ -150,7 +150,7 @@ vm.min_free_kbytes = $min_free
 fs.file-max = $file_max
 
 # Core dump suidsafe
-fs.suid_dumpable = 2 
+fs.suid_dumpable = 2
 
 kernel.core_pattern = core.%e.%p.%t
 kernel.printk = 4 4 1 7
@@ -170,4 +170,3 @@ EOF
 
 /sbin/sysctl --system
 exit $?
-
