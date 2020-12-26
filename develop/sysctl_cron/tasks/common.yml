@@ -1,5 +1,5 @@
 ---
-- name: <>
+- name: <r_sysctl_cron_t_common>
   cron:
     name: "{{ v['name'] }}"
     minute: "{{ v['minute'] | default('*') }}"

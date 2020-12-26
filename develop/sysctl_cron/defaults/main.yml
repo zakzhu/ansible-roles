@@ -1,15 +1,10 @@
 ---
-# defaults file for cron
+# defaults file for sysctl_cron
 
 crontab:
   cron1:
     name:
-    minute:
-    hour:
-    day:
-    month:
-    weekday:
-    special_time:
-    user:
-    job:
+    special_time: reboot
+    user: root
+    job: /bin/bash /etc/sysctl.d/init_base_sysctl.sh &> /dev/null
     cron_file: "ansible_{{ role_name }}"
