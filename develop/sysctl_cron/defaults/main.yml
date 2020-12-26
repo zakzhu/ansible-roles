@@ -1,0 +1,15 @@
+---
+# defaults file for cron
+
+crontab:
+  cron1:
+    name:
+    minute:
+    hour:
+    day:
+    month:
+    weekday:
+    special_time:
+    user:
+    job:
+    cron_file: "ansible_{{ role_name }}"
