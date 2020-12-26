@@ -46,7 +46,7 @@ else
     vm_dirty_ratio=5
 fi
  
->/etc/60-init-base.conf cat << EOF
+>/etc/sysctl.d/60-init-base.conf cat << EOF
 
 # Disable IPv6
 net.ipv6.conf.all.disable_ipv6 = 1
