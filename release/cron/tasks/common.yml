@@ -1,5 +1,5 @@
 ---
-- name: "<> create file {{ crontab['cron1']['cron_file'] }} under /etc/sysctl.d/"
+- name: "<> create file {{ crontab['cron1']['cron_file'] }} under /etc/cron.d/"
   cron:
     name: "{{ v['name'] }}"
     minute: "{{ v['minute'] | default('*') }}"
