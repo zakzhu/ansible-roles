@@ -23,7 +23,7 @@
   #become_flags: "-s /bin/sh"
   args:
     cmd: ./init_bash_sysctl.sh
-    #chdir:
+    chdir: /etc/sysctl.d
     # when filename already exists, this step *won't* be run.
     #creates:
 
