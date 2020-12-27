@@ -1,5 +1,5 @@
 ---
-- name: <r_grub_t_common> disable consistent network device naming
+- name: <r_net_names_t_common> disable consistent network device naming
   template:
     src: grub.j2
     dest: /etc/default/grub
@@ -13,3 +13,20 @@
     grub_net_cmd:
       - net.ifnames=0
       - biosdevname=0
+
+- name: <r_net_names_t_common> rebuild the grub configuration file
+  command:
+  #become: yes
+  #become_method: su
+  #become_user:
+  #become_flags: "-s /bin/sh"
+  args:
+    cmd: grub2-mkconfig -o /etc/grub2.cfg
+    #chdir:
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *won't* be run.
+    #creates:
+
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *will* be run.
+    #remove:
