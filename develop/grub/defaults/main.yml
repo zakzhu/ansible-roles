@@ -2,5 +2,12 @@
 # defaults file for grub
 
 # FROM TASK: <r_grub_t_common> template a file to /etc/default/grub
+grub_timeout: 3
+
 grub_cmd:
-  -
+  - consoleblank=600
+  - console=tty0
+  - console=ttyS0,115200n8
+  - spectre_v2=off
+  - nopti
+  - crashkernel=auto
