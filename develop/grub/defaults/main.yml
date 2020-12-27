@@ -2,5 +2,5 @@
 # defaults file for grub
 
 # FROM TASKS: <r_grub_t_common> template a file to /etc/default/grub
-grub_cmdline:
+grub_cmd:
   -

@@ -3,5 +3,5 @@ GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
 GRUB_DEFAULT=saved
 GRUB_DISABLE_SUBMENU=true
 GRUB_TERMINAL_OUTPUT="console"
-GRUB_CMDLINE_LINUX="{{ grub_cmdline | join(' ') }}"
+GRUB_CMDLINE_LINUX="{{ grub_cmd | join(' ') }}"
 GRUB_DISABLE_RECOVERY="true"

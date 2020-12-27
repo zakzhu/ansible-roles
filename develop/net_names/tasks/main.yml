@@ -1,2 +1,6 @@
 ---
 # tasks file for net_names
+
+- import_tasks: common.yml
+  tags:
+    - r_net_names_t_common
