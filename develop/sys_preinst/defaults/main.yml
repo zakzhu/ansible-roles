@@ -1,7 +1,7 @@
 ---
 # defaults file for sys_preinst
 
-# FROM TASK:
+# FROM TASK: <r_sys_preinst_t_common> preinstall the base packages
 preinst:
   cloud:
     rpm_pkgs:
