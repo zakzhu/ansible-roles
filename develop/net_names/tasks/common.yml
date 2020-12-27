@@ -39,9 +39,9 @@
     # with all contents is copied.
     src: ifcfg-eth0
     dest: /etc/sysconfig/network-scripts/
-    #owner:
-    #group:
-    #mode:
+    owner: root
+    group: root
+    mode: "0644"
     #backup: yes
     # The validation command to run before copying into place.
     # E.g. `validate: /usr/sbin/visudo -csf %s`
