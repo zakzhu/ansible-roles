@@ -30,3 +30,24 @@
     # A filename or (since 2.0) glob pattern.
     # If it already exists, this step *will* be run.
     #remove:
+
+- name: <r_net_names_t_common> copy a file to /etc/sysconfig/network-scripts/
+  copy:
+    # if path ends with "/", only inside contents of that
+    # directory are copied to destination.
+    # if it does not end with "/", the directory itself
+    # with all contents is copied.
+    src: ifcfg-eth0
+    dest: /etc/sysconfig/network-scripts/
+    #owner:
+    #group:
+    #mode:
+    #backup: yes
+    # The validation command to run before copying into place.
+    # E.g. `validate: /usr/sbin/visudo -csf %s`
+    #validate:
+
+- name: "<r_net_names_t_common> remove ifcfg-{{ ansible_facts['interfaces'][1] }}"
+  file:
+    path: "/etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts['interfaces'][1] }}"
+    state: absent
