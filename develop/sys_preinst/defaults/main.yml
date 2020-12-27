@@ -1,2 +1,22 @@
 ---
 # defaults file for sys_preinst
+
+# FROM TASK:
+preinst:
+  cloud:
+    rpm_pkgs:
+      - "@Base"
+      - "@Debugging Tools"
+      - "@Development Tools"
+      - "@Large Systems Performance"
+      - "@Networking Tools"
+      - "@Performance Tools"
+      - "@System Administration Tools"
+      - lrzsz
+      - nmap
+      - telnet
+      - tree
+    deb_pkgs:
+  bare_metal:
+    rpm_pkgs:
+    deb_pkgs:

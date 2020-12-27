@@ -1,0 +1,9 @@
+---
+- name: <r_sys_preinst_t_common>
+  yum:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+    disable_gpg_check: yes
+    #allow_downgrade: yes
+  loop: "{{ preinst['rpm_pkgs'] }}"

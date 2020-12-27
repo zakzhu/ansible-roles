@@ -1,2 +1,6 @@
 ---
 # tasks file for sys_preinst
+
+- import_tasks: common.yml
+  tags:
+    - r_sys_preinst_t_common
