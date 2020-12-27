@@ -1,1 +1,15 @@
 ---
+- name: <r_grub_t_common> disable consistent network device naming
+  template:
+    src: grub.j2
+    dest: /etc/default/grub
+    owner: root
+    group: root
+    mode: "0644"
+    #validate:
+    #backup: yes
+  vars:
+    origin_cmdline: "{{ lookup('ini', 'GRUB_CMDLINE_LINUX type=properties file=/etc/default/grub') }}"
+    grub_net_cmd:
+      - net.ifnames=0
+      - biosdevname=0

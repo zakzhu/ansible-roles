@@ -1,6 +1,6 @@
 ---
 # defaults file for grub
 
-# FROM TASKS: <r_grub_t_common> template a file to /etc/default/grub
+# FROM TASK: <r_grub_t_common> template a file to /etc/default/grub
 grub_cmd:
   -
