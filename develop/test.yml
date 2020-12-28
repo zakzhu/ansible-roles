@@ -1,5 +1,10 @@
 ---
 - hosts: localhost
   remote_user: root
+  vars:
+    {{ role_name }}_writer: zakzhu
   roles:
     - base_rlimits
+  tasks:
+    - debug:
+        msg: "{{ {{role_name}}_writer }}"
