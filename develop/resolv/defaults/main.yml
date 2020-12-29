@@ -1,2 +1,13 @@
 ---
 # defaults file for resolv
+
+# FROM TASK: <r_resolv_t_common> template a file to /etc/resolv.conf
+resolv_nameservers:
+  - 223.5.5.5
+  - 223.6.6.6
+resolv_domain: ""
+resolv_search: []
+resolv_sortlist: []
+resolv_options:
+  - timeout:2
+  - rotate

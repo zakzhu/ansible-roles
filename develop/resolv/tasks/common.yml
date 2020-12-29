@@ -1,0 +1,10 @@
+---
+- name: <r_resolv_t_common> template a file to /etc/resolv.conf
+  template:
+    src: resolv.conf.j2
+    dest: /etc/resolv.conf
+    owner: root
+    group: root
+    mode: "0644"
+    #validate:
+    #backup: yes
