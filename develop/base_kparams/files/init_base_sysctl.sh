@@ -93,7 +93,7 @@ net.ipv4.tcp_fack = 1
 net.ipv4.tcp_dsack = 1
 
 # Controls IP packet forwarding
-net.ipv4.ip_forward = 0
+net.ipv4.ip_forward = 1
 
 # No controls source route verification (RFC1812)
 net.ipv4.conf.all.rp_filter = 0
