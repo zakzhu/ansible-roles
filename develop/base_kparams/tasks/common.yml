@@ -1,5 +1,5 @@
 ---
-- name: <r_base_kparams_t_common> template a file to /etc/sysctl.d/00-init-base.conf
+- name: <r_base_kparams_t_common> template a file to /etc/sysctl.d/init_base_sysctl.sh
   template:
     src: init_base_sysctl.sh.j2
     dest: /etc/sysctl.d/init_base_sysctl.sh
@@ -19,7 +19,7 @@
   #become_flags: "-s /bin/sh"
   args:
     cmd: /bin/bash init_bash_sysctl.sh
-    chdir: /etc/sysctl.d
+    chdir: /etc/sysctl.d/
     # when filename already exists, this step *won't* be run.
     #creates:
 
