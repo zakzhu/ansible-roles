@@ -18,8 +18,8 @@
   #become_user:
   #become_flags: "-s /bin/sh"
   args:
-    cmd: /bin/bash init_bash_sysctl.sh
-    chdir: /etc/sysctl.d/
+    cmd: ./init_base_sysctl.sh
+    chdir: /etc/sysctl.d
     # when filename already exists, this step *won't* be run.
     #creates:
 
