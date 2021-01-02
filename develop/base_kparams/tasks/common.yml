@@ -2,10 +2,10 @@
 - name: <r_base_kparams_t_common> template a file to /etc/sysctl.d/00-init-base.conf
   template:
     src: init_base_sysctl.sh.j2
-    dest: /etc/sysctl.d/
+    dest: /etc/sysctl.d/init_base_sysctl.sh
     owner: root
     group: root
-    mode: "0644"
+    mode: "0744"
     #backup: yes
     # The validation command to run before copying into place.
     # E.g. `validate: /usr/sbin/visudo -csf %s`
