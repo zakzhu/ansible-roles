@@ -47,7 +47,7 @@
     # E.g. `validate: /usr/sbin/visudo -csf %s`
     #validate:
 
-- name: "<r_net_names_t_common> remove ifcfg-{{ ansible_facts['interfaces'][1] }}"
+- name: "<r_net_names_t_common> remove /etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts['interfaces'][1] }}"
   file:
     path: "/etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts['interfaces'][1] }}"
     state: absent
