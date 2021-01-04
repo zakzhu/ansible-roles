@@ -1,3 +1,4 @@
+{{ ansible_managed | comment }}
 GRUB_TIMEOUT={{ grub_timeout }}
 GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
 GRUB_DEFAULT=saved
