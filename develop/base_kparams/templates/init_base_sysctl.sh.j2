@@ -24,9 +24,7 @@ host=$(hostname)
 ARCH=$(uname -m)
 
 which bc
-if [ $? -ne 0 ]; then
-    echo "This script require GNU bc, cf. http://www.gnu.org/software/bc/"
-fi
+exit $?
 
 mem_bytes=$(awk '/MemTotal:/ { printf "%0.f",$2 * 1024}' /proc/meminfo)
 shmmax=$(echo "$mem_bytes * 0.90" | bc | cut -f 1 -d '.')
