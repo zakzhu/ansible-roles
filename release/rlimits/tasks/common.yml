@@ -6,6 +6,6 @@
     limit_item: "{{ v['item'] }}"
     limit_type: "{{ v['type'] }}"
     dest: "{{ v['file'] | default(omit) }}"
-  loop: "{{ limits | dict2items }}"
+  loop: "{{ rlimits | dict2items }}"
   vars:
     v: "{{ item.value }}"
