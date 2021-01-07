@@ -1,5 +1,5 @@
 ---
-- name: "<r_sysctl_cron_t_common> create file {{ crontab['cron1']['cron_file'] }} under /etc/cron.d/"
+- name: "<r_sysctl_cron_t_common> create file {{ sysctl_cron_table['cron1']['cron_file'] }} under /etc/cron.d/"
   cron:
     name: "{{ v['name'] }}"
     minute: "{{ v['minute'] | default('*') }}"
@@ -13,6 +13,6 @@
     job: "{{ v['job'] }}"
     cron_file: "{{ v['cron_file'] }}"
     state: present
-  loop: "{{ crontab | dict2items }}"
+  loop: "{{ sysctl_cron_table | dict2items }}"
   vars:
     v: "{{ item.value }}"
