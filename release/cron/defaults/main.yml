@@ -1,7 +1,7 @@
 ---
 # defaults file for cron
 
-crontab:
+cron_table:
   cron1:
     name:
     minute:
