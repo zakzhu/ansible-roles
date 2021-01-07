@@ -1,7 +1,7 @@
 ---
 # defaults file for yum_cron
 
-crontab:
+yum_cron_table:
   cron1:
     name: update yum cache
     minute: "0"
