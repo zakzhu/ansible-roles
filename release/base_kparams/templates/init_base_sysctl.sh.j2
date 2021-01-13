@@ -143,6 +143,9 @@ vm.swappiness = 0
 vm.dirty_background_ratio = $vm_dirty_bg_ratio
 vm.dirty_ratio = $vm_dirty_ratio
 
+# always overcommit memory
+vm.overcommit_memory = 1
+
 # required free memory (set to 1% of physical ram)
 vm.min_free_kbytes = $min_free
 
