@@ -1,0 +1,8 @@
+---
+- name: "({{ role_name }}) restart service chronyd"
+  systemd:
+    name: chronyd
+    # Choices: reloaded, restarted, started, stopped
+    state: restarted
+    enabled: yes
+    #daemon_reload: yes

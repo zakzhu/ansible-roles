@@ -3,4 +3,4 @@
   remote_user: root
   vars:
   roles:
-    - base_kparams
+    - chrony

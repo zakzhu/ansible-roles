@@ -1,2 +1,6 @@
 ---
 # tasks file for chrony
+
+- import_tasks: common.yml
+  tags:
+    - r_chrony_t_common

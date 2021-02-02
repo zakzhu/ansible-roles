@@ -1,2 +1,20 @@
 ---
 # defaults file for chrony
+
+# FROM TASK: "<r_chrony_t_common> set timezone to {{ time_zone }}"
+time_zone: Asia/Shanghai
+
+# FROM TASK: <r_chrony_t_common> template a file to /etc/chrony.conf
+# Choices: client, server
+chrony_role: client
+chrony_ntp_servers:
+  - ntp1.aliyun.com
+  - ntp2.aliyun.com
+  - time1.cloud.tencent.com
+  - time2.cloud.tencent.com
+chrony_min_poll: 4
+chrony_max_poll: 10
+chrony_stratum_weight: 0
+chrony_step_threshold: 10
+chrony_step_limit: 3
+chrony_log_change: 0.5

@@ -1,0 +1,11 @@
+{{ ansible_managed | comment }}
+{% for ntp_server in chrony_ntp_servers %}
+server {{ ntp_server }} minpoll {{ chrony_min_poll }} maxpoll {{ chrony_max_poll }} iburst
+{% endfor %}
+stratumweight {{ chrony_stratum_weight }}
+driftfile /var/lib/chrony/drift
+rtcsync
+makestep {{ chrony_step_threshold }} {{ chrony_step_limit }}
+noclientlog
+logchange {{ chrony_log_change }}
+logdir /var/log/chrony

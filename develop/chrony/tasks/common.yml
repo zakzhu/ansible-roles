@@ -1,0 +1,17 @@
+---
+- name: "<r_chrony_t_common> set timezone to {{ time_zone }}"
+  timezone:
+    name: "{{ time_zone }}"
+
+- name: <r_chrony_t_common> template a file to /etc/chrony.conf
+  template:
+    src: "ntp_{{ chrony_role }}.conf.j2"
+    dest: /etc/chrony.conf
+    owner: root
+    group: root
+    mode: "0644"
+    #backup: yes
+    # The validation command to run before copying into place.
+    # E.g. `validate: /usr/sbin/visudo -csf %s`
+    #validate:
+  notify: "({{ role_name }}) restart service chronyd"

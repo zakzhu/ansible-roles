@@ -1,2 +1,4 @@
 ---
 # handlers file for chrony
+
+- import_tasks: from_common.yml
