@@ -1,4 +1,5 @@
 {{ ansible_managed | comment }}
+
 {% for ntp_server in chrony_ntp_servers %}
 server {{ ntp_server }} minpoll {{ chrony_min_poll }} maxpoll {{ chrony_max_poll }} iburst
 {% endfor %}
