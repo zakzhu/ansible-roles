@@ -3,7 +3,7 @@
 
 sysctl_cron_table:
   cron1:
-    name: initialize /etc/sysctl.d/00-base.conf
+    name: initialize /etc/sysctl.d/00-base-sysctl.conf
     special_time: reboot
     user: root
     job: /bin/bash /etc/sysctl.d/init_base_sysctl.sh &> /dev/null
