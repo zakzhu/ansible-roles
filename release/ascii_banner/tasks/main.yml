@@ -1,6 +1,0 @@
----
-# tasks file for ascii_banner
-
-- import_tasks: common.yml
-  tags:
-    - r_ascii_banner_t_common
