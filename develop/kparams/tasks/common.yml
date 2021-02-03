@@ -1,0 +1,11 @@
+---
+- name: <>
+  sysctl:
+    name: "{{ v['name'] }}"
+    value: "{{ v['value'] }}"
+    sysctl_file: "{{ v['file'] | default(omit) }}"
+    state: present
+    reload: no
+  loop: "{{ kparams | dict2items }}"
+  vars:
+    v: "{{ item.value }}"
