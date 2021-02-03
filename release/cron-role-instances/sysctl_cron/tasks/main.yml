@@ -1,6 +1,0 @@
----
-# tasks file for cron
-
-- import_tasks: common.yml
-  tags:
-    - r_sysctl_cron_t_common

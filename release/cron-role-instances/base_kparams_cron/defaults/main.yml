@@ -1,7 +1,7 @@
 ---
-# defaults file for sysctl_cron
+# defaults file for base_kparams_cron
 
-sysctl_cron_table:
+base_kparams_cron_table:
   cron1:
     name: initialize /etc/sysctl.d/00-base-sysctl.conf
     special_time: reboot
