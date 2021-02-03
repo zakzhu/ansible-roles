@@ -1,12 +1,2 @@
 ---
 # defaults file for kparams
-
-# CONVENTIONS OF sysctl FILE:
-# The format of filename: XX-SERVICE.conf
-# (e.g. 80-elasticsearch.conf)
-# NOTE:
-# - 00 ~ 59 System Reserved
-# - 60 ~ 89 Operator Used
-# - 90 ~ 99 Future Reserved
-
-# The first custom file is recommended to start with 80
