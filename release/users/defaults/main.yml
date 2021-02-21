@@ -1,39 +1,38 @@
 ---
 # defaults file for users
 
-# FROM TASK: <r_users_t_create_groups> create primary groups
 # EXAMPLE: primary_groups variable
 # primary_groups:
 #   group1:
+#     name:
 #     gid:
 #   group2:
+#     name:
 #     gid:
 #   # ...
-primary_groups:
+#primary_groups:
 
-# FROM TASK: <r_users_t_create_groups> create secondary groups
 # EXAMPLE: secondary_group variable
 # secondary_groups:
-#   group3:
+#   group1:
+#     name:
 #     gid:
-#   group4:
+#   group2:
+#     name
 #     gid:
 #   # ...
-secondary_groups:
+#secondary_groups:
 
-# FROM TASK: <r_users_t_common> create users and update users' authentication tokens
 # EXAMPLE: users variable
 # users:
 #   user1:
+#     name:
 #     comment:
 #     uid:
 #     # optionally sets the user's primary group
-#     primary_groups:
+#     primary_group:
 #     # type: list
 #     secondary_groups:
-#       - group3
-#       - group4
-#
 #     home:
 #     shell:
 #     # plain text
@@ -43,4 +42,4 @@ secondary_groups:
 #   user2:
 #     # ...
 #   # ...
-users:
+#users:

@@ -1,10 +1,14 @@
 ---
 # tasks file for users
 
-- import_tasks: create_groups.yml
-  tags:
-    - r_users_t_create_groups
+# - import_tasks: cr8_pgrps.yml
+#   tags:
+#     - r_users_t_cr8_pgrps
 
-- import_tasks: common.yml
+# - import_tasks: cr8_sgrps.yml
+#   tags:
+#     - r_users_t_cr8_sgrps
+
+- import_tasks: cr8_users.yml
   tags:
-    - r_users_t_common
+    - r_users_t_cr8_users
