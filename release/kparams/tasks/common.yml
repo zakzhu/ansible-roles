@@ -9,3 +9,20 @@
   loop: "{{ kparams | dict2items }}"
   vars:
     v: "{{ item.value }}"
+
+- name: <> load settings from all system configuration files
+  command:
+  #become: yes
+  #become_method: su
+  #become_user:
+  #become_flags: "-s /bin/sh"
+  args:
+    cmd: sysctl --system
+    #chdir:
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *won't* be run.
+    #creates:
+
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *will* be run.
+    #remove:
