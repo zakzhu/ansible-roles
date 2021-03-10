@@ -16,9 +16,8 @@
 
 - name: <r_pip_t_common> install pip
   yum:
-    name: "{{ pkg_pip }}"
+    name: "{{ pip_pkg }}"
     state: present
     update_cache: yes
     disable_gpg_check: yes
-    disable_plugin: fastestmirror
     #allow_downgrade: yes

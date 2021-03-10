@@ -6,7 +6,7 @@ time_zone: Asia/Shanghai
 
 # FROM TASK: <r_chrony_t_common> template a file to /etc/chrony.conf
 # Choices: client, server
-chrony_role: client
+chrony_node_role: client
 chrony_ntp_servers:
   - ntp1.aliyun.com
   - ntp2.aliyun.com

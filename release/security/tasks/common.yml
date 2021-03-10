@@ -1,9 +1,9 @@
 ---
-- name: <pr_r_security_t_common> disable selinux
+- name: <r_security_t_common> disable selinux
   selinux:
     state: disabled
 
-- name: <pr_r_security_t_common> stop and disable service firewalld
+- name: <r_security_t_common> stop and disable service firewalld
   systemd:
     name: firewalld
     # Choices: reloaded, restarted, started, stopped

@@ -1,0 +1,14 @@
+---
+# defaults file for base_rlimits
+
+base_rlimits:
+  entry1:
+    domain: "*"
+    value: 65536
+    item: nofile
+    type: "-"
+  entry2:
+    domain: "*"
+    value: 65536
+    item: nproc
+    type: "-"

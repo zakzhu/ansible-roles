@@ -1,0 +1,11 @@
+---
+- name: <r_base_rlimits_t_common> add base resource limits for system
+  pam_limits:
+    domain: "{{ v['domain'] }}"
+    value: "{{ v['value'] }}"
+    limit_item: "{{ v['item'] }}"
+    limit_type: "{{ v['type'] }}"
+    dest: "{{ v['file'] | default(omit) }}"
+  loop: "{{ base_rlimits | dict2items }}"
+  vars:
+    v: "{{ item.value }}"

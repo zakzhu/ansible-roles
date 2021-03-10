@@ -1,0 +1,14 @@
+---
+# tasks file for sys_account
+
+- import_tasks: cr8_pgrps.yml
+  tags:
+    - r_sys_account_t_cr8_pgrps
+
+- import_tasks: cr8_sgrps.yml
+  tags:
+    - r_sys_account_t_cr8_sgrps
+
+- import_tasks: cr8_users.yml
+  tags:
+    - r_sys_account_t_cr8_users

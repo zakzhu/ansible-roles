@@ -1,9 +1,0 @@
----
-- name: <r_users_t_cr8_pgrps> create primary groups
-  group:
-    name: "{{ v.name }}"
-    gid: "{{ v.gid }}"
-    state: present
-  loop: "{{ primary_groups | dict2items }}"
-  vars:
-    v: "{{ item.value }}"

@@ -1,1 +1,1 @@
-pkg_pip: python2-pip
+pip_pkg: python2-pip

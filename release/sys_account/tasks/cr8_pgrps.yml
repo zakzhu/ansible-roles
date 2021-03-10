@@ -1,9 +1,9 @@
 ---
-- name: <r_users_t_cr8_sgrps> create secondary groups
+- name: <r_sys_account_t_cr8_pgrps> create primary groups
   group:
     name: "{{ v.name }}"
     gid: "{{ v.gid }}"
     state: present
-  loop: "{{ secondary_groups | dict2items }}"
+  loop: "{{ sys_account_primary_groups | dict2items }}"
   vars:
     v: "{{ item.value }}"

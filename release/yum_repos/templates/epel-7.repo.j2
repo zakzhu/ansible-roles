@@ -1,8 +1,10 @@
+{{ ansible_managed | comment }}
+
 [epel]
 name=Extra Packages for Enterprise Linux $releasever - $basearch
 failovermethod=priority
 baseurl=
-{% for i in mirrors_hosts %}
+{% for i in yum_repos_mirrors_hosts %}
     http://{{ i }}/epel/$releasever/$basearch
 {% endfor %}
 enabled=1

@@ -1,5 +1,5 @@
 ---
-- name: <r_users_t_cr8_users> create users and update users' authentication tokens
+- name: <r_sys_account_t_cr8_users> create users and update users' authentication tokens
   user:
     name: "{{ v.name }}"
     comment: "{{ v.comment | default(omit) }}"
@@ -15,7 +15,7 @@
     ssh_key_comment: "{{ v.name }}@{{ hostname }}"
     state: present
     remove: no
-  loop: "{{ users | dict2items }}"
+  loop: "{{ sys_account_users | dict2items }}"
   vars:
     v: "{{ item.value }}"
     salt: "{{ 65534 | random(seed=inventory_hostname) | string }}"

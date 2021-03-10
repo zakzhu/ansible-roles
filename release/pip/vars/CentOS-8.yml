@@ -1,1 +1,1 @@
-pkg_pip: python3-pip
+pip_pkg: python3-pip

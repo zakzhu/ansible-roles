@@ -1,8 +1,10 @@
+{{ ansible_managed | comment }}
+
 [docker-ce-stable]
 name=Docker CE Stable - $basearch
 failovermethod=priority
 baseurl=
-{% for i in mirrors_hosts %}
+{% for i in yum_repos_mirrors_hosts %}
     http://{{ i }}/docker-ce/linux/centos/$releasever/$basearch/stable
 {% endfor %}
 enabled=1

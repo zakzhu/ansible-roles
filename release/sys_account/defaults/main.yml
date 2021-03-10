@@ -1,8 +1,8 @@
 ---
-# defaults file for users
+# defaults file for sys_account
 
-# EXAMPLE: primary_groups variable
-# primary_groups:
+# EXAMPLE: sys_account_primary_groups variable
+# sys_account_primary_groups:
 #   group1:
 #     name:
 #     gid:
@@ -10,10 +10,10 @@
 #     name:
 #     gid:
 #   # ...
-#primary_groups:
+#sys_account_primary_groups:
 
-# EXAMPLE: secondary_group variable
-# secondary_groups:
+# EXAMPLE: sys_account_secondary_group variable
+# sys_account_secondary_groups:
 #   group1:
 #     name:
 #     gid:
@@ -21,10 +21,10 @@
 #     name
 #     gid:
 #   # ...
-#secondary_groups:
+#sys_account_secondary_groups:
 
-# EXAMPLE: users variable
-# users:
+# EXAMPLE: sys_account_users variable
+# sys_account_users:
 #   user1:
 #     name:
 #     comment:
@@ -42,4 +42,4 @@
 #   user2:
 #     # ...
 #   # ...
-#users:
+#sys_account_users:

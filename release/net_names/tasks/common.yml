@@ -31,6 +31,11 @@
     # If it already exists, this step *will* be run.
     #remove:
 
+- name: "<r_net_names_t_common> remove /etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts['interfaces'][1] }}"
+  file:
+    path: "/etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts['interfaces'][1] }}"
+    state: absent
+
 - name: <r_net_names_t_common> copy a file to /etc/sysconfig/network-scripts/
   copy:
     # if path ends with "/", only inside contents of that
@@ -46,8 +51,3 @@
     # The validation command to run before copying into place.
     # E.g. `validate: /usr/sbin/visudo -csf %s`
     #validate:
-
-- name: "<r_net_names_t_common> remove /etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts['interfaces'][1] }}"
-  file:
-    path: "/etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts['interfaces'][1] }}"
-    state: absent

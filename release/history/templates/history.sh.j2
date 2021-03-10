@@ -1,11 +1,13 @@
+{{ ansible_managed | comment }}
+
 # Set history time format
 export HISTTIMEFORMAT="%F %T "
 
 # Maximum number of history lines in memory
-export HISTSIZE={{ hist_size }}
+export HISTSIZE={{ history_size }}
 
 # Maximum number of history lines on disk
-export HISTFILESIZE={{ hist_file_size }}
+export HISTFILESIZE={{ history_file_size }}
 
 # Don't ignore duplicate lines
 unset HISTCONTROL

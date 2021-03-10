@@ -3,9 +3,19 @@
   timezone:
     name: "{{ time_zone }}"
 
+- name: <r_chrony_t_common> install chrony
+  yum:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+    disable_gpg_check: yes
+    #allow_downgrade: yes
+  loop:
+    - chrony
+
 - name: <r_chrony_t_common> template a file to /etc/chrony.conf
   template:
-    src: "ntp_{{ chrony_role }}.conf.j2"
+    src: "ntp_{{ chrony_node_role }}.conf.j2"
     dest: /etc/chrony.conf
     owner: root
     group: root

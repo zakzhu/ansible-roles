@@ -3,4 +3,4 @@
 
 - import_tasks: common.yml
   tags:
-    - pr_r_security_t_common
+    - r_security_t_common
