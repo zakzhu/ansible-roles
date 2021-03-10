@@ -1,9 +1,8 @@
 ---
 # defaults file for readme_sample
 
-# FROM TASK: "<r_readme_sample_t_common> template a file to {{ project_path }}/README.md.sample"
-project:
-project_path:
+#project:
+#project_path:
 
 # choose a valid license ID from https://spdx.org - some suggested licenses:
 # - BSD-3-Clause (default)
@@ -17,8 +16,8 @@ license: BSD-3-Clause
 date_cmd: "date +'%Y'"
 year: "{{ lookup('pipe', '{{ date_cmd }}') }}"
 
-author:
-github_account:
+#author:
+#github_account:
 
 # for travis
 info_build_url: https://travis-ci.org/github/{{ github_account | default('GITHUB-ACCOUNT') }}/{{ project }}
