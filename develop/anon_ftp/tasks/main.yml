@@ -1,0 +1,10 @@
+---
+# tasks file for anon_ftp
+
+- import_tasks: common.yml
+  tags:
+    - r_common_t_common
+
+- import_tasks: anon_config.yml
+  tags:
+    - r_common_t_anon_config

@@ -1,0 +1,7 @@
+---
+# defaults file for anon_ftp
+
+vsftpd_anon_root:
+vsftpd_listen_address:
+vsftpd_idle_session_timeout: 600
+vsftpd_data_connection_timeout: 300
