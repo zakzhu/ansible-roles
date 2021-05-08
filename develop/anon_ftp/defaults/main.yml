@@ -1,7 +1,7 @@
 ---
 # defaults file for anon_ftp
 
-anon_ftp_anon_root: /data/ftp/
+anon_ftp_anon_root: /ftp
 anon_ftp_address: 10.0.2.15
 anon_ftp_idle_session_timeout: 600
 anon_ftp_data_connection_timeout: 300
