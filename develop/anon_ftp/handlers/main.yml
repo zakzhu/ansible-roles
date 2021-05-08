@@ -1,2 +1,10 @@
 ---
 # handlers file for anon_ftp
+
+- name: "({{ anon_ftp }}) restart service vsftpd"
+  systemd:
+    name: vsftpd
+    # Choices: reloaded, restarted, started, stopped
+    state: restart
+    enabled: yes
+    #daemon_reload: yes
