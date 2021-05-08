@@ -10,4 +10,4 @@
     # The validation command to run before copying into place.
     # E.g. `validate: /usr/sbin/visudo -csf %s`
     #validate:
-  notify: "({{ anon_ftp }}) restart service vsftpd"
+  notify: "({{ role_name }}) restart service vsftpd"
