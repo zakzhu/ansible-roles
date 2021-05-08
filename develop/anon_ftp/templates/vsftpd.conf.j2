@@ -4,28 +4,26 @@
 
 listen=YES
 listen_ipv6=NO
-listen_address={{ vsftpd_listen_address }}
+listen_address={{ anon_ftp_address }}
 
 local_enable=NO
 
 anonymous_enable=YES
 no_anon_password=YES
-anon_root={{ vsftpd_anon_root }}
+anon_root={{ anon_ftp_anon_root }}
 
 xferlog_enable=YES
 xferlog_file=/var/log/vsftpd.log
 
-idle_session_timeout={{ vsftpd_idle_session_timeout }}
-data_connection_timeout={{ vsftpd_data_connection_timeout }}
+idle_session_timeout={{ anon_ftp_idle_session_timeout }}
+data_connection_timeout={{ anon_ftp_data_connection_timeout }}
 
 nopriv_user=ftp
 hide_ids=YES
 
 connect_from_port_20=YES
 
-pasv_addr_resolve=YES
-pasv_address={{ vsftpd_listen_address }}
-pasv_min_port=40000
-pasv_max_port=50000
+pasv_min_port={{ anon_ftp_pasv_min_port }}
+pasv_max_port={{ anon_ftp_pasv_max_port }}
 
 use_localtime=YES

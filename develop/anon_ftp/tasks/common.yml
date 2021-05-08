@@ -1,5 +1,5 @@
 ---
-- name: <r_common_t_common> install the vsftpd package
+- name: <r_anon_ftp_t_common> install the vsftpd package
   apt:
     name: "{{ item }}"
     state: present
@@ -7,16 +7,16 @@
   loop:
     - vsftpd
 
-- name: "<r_common_t_common> create directory {{ }}"
+- name: "<r_anon_ftp_t_common> create directory {{ anon_ftp_anon_root }}"
   file:
-    path: "{{ vsftpd_anon_root }}"
+    path: "{{ anon_ftp_anon_root }}"
     state: directory
     owner: root
     group: ftp
     mode: "0755"
     #recurse: yes
 
-- name: <r_common_t_common> change the ftp user's home directory
+- name: <r_anon_ftp_t_common> change the ftp user's home directory
   user:
     name: ftp
-    home: "{{ vsftpd_anon_root }}"
+    home: "{{ anon_ftp_anon_root }}"

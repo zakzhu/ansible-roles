@@ -1,7 +1,9 @@
 ---
 # defaults file for anon_ftp
 
-vsftpd_anon_root:
-vsftpd_listen_address:
-vsftpd_idle_session_timeout: 600
-vsftpd_data_connection_timeout: 300
+anon_ftp_anon_root: /data/ftp/
+anon_ftp_address: 10.0.2.15
+anon_ftp_idle_session_timeout: 600
+anon_ftp_data_connection_timeout: 300
+anon_ftp_pasv_min_port: 40000
+anon_ftp_pasv_max_port: 50000

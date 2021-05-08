@@ -1,5 +1,5 @@
 ---
-- name: <r_common_t_anon_config> template a file to DEST
+- name: <r_anon_ftp_t_config> template a file to /etc/vsftpd.conf
   template:
     src: vsftpd.conf.j2
     dest: /etc/vsftpd.conf
