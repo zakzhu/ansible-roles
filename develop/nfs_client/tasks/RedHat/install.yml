@@ -1,0 +1,9 @@
+---
+- name: <r_nfs_client_t_install> install nfs client
+  yum:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+    disable_gpg_check: yes
+    #allow_downgrade: yes
+  loop: "{{ nfs_client_pkgs }}"

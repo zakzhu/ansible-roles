@@ -1,0 +1,7 @@
+---
+- name: <r_nfs_client_t_install> install nfs client
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  loop: "{{ nfs_client_pkgs }}"
