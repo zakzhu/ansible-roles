@@ -1,2 +1,10 @@
 ---
 # tasks file for nfs_client
+
+- import_tasks: install.yml
+  tags:
+    - r_nfs_client_t_install
+
+- import_tasks: setup.yml
+  tags:
+    - r_nfs_client_t_setup
