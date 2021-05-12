@@ -1,12 +1,13 @@
 ---
 - name: <r_nfs_server_t_setup> create directory PATH
   file:
-    path:
+    path: "{{ item.export }}"
     state: directory
     owner: root
     group: root
     mode: "0755"
     #recurse: yes
+  loop: "{{ nfs_server_shares }}"
 
 - name: <r_nfs_server_t_setup> template a file to /etc/exports
   template:
