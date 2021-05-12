@@ -1,0 +1,7 @@
+---
+- name: <r_nfs_server_t_install> install nfs server
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  loop: "{{ nfs_server_pkgs }}"

@@ -1,2 +1,25 @@
 ---
 # tasks file for nfs_server
+
+- include_vars: "{{ lookup('first_found', params) }}"
+  vars:
+    os_distro: "{{ ansible_facts['distribution'] }}"
+    os_major: "{{ ansible_facts['distribution_major_version'] }}"
+    os_version: "{{ os_distro }}-{{ os_major }}"
+    os_family: "{{ ansible_facts['os_family'] }}"
+    params:
+      files:
+        - "{{ os_version }}.yml"
+        - "{{ os_distro }}.yml"
+        - "{{ os_family }}.yml"
+        - default.yml
+      paths:
+        - "vars"
+
+- import_tasks: install.yml
+  tags:
+    - r_nfs_server_t_install
+
+- import_tasks: setup.yml
+  tags:
+    - r_nfs_server_t_setup

@@ -1,0 +1,9 @@
+---
+- name: <r_nfs_server_t_install> install nfs server
+  yum:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+    disable_gpg_check: yes
+    #allow_downgrade: yes
+  loop: "{{ nfs_server_pkgs }}"
