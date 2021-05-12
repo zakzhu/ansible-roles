@@ -1,2 +1,10 @@
 ---
 # handlers file for nfs_server
+
+- name: "({{ role_name }}) restart nfs service"
+  systemd:
+    name: "{{ nfs_server_service }}"
+    # Choices: reloaded, restarted, started, stopped
+    state: restarted
+    enabled: yes
+    #daemon_reload: yes

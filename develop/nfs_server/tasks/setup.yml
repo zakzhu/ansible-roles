@@ -1,1 +1,13 @@
 ---
+- name: <r_nfs_server_t_setup> template a file to /etc/exports
+  template:
+    src: exports.j2
+    dest: /etc/exports
+    owner: root
+    group: root
+    mode: "0644"
+    #backup: yes
+    # The validation command to run before copying into place.
+    # E.g. `validate: /usr/sbin/visudo -csf %s`
+    #validate:
+  notify: "({{ role_name }}) restart nfs service"

@@ -1,3 +1,6 @@
 ---
 nfs_server_pkgs:
   - nfs-utils
+
+nfs_server_service:
+  - nfs-server
