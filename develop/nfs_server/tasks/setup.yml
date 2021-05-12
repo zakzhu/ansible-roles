@@ -1,5 +1,5 @@
 ---
-- name: <r_nfs_server_t_setup> create directory PATH
+- name: <r_nfs_server_t_setup> create export directories
   file:
     path: "{{ item.export }}"
     state: directory
