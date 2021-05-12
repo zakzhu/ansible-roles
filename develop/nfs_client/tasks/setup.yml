@@ -1,1 +1,28 @@
 ---
+- name: <r_nfs_client_t_setup> mount nfs share
+  mount:
+    path: "{{ item.mount_point }}"
+    src: "{{ item.src }}"
+    fstype: nfs
+    opts: "{{ item.opts | joint(',') }}"
+
+    # If `mounted', the device will be actively mounted and
+    # appropriately configured in `fstab'. If the mount point is not
+    # present, the mount point will be created.
+    #
+    # If `unmounted', the device will be unmounted without changing `fstab'.
+    #
+    # `present' only specifies that the device is to be configured
+    # in `fstab' and does not trigger or require a mount.
+    #
+    # `absent' specifies that the device mount's entry will be
+    # removed from `fstab' and will also unmount the device and
+    # remove the mount point.
+    #
+    # `remounted' specifies that the device will be remounted for
+    # when you want to force a refresh on the mount itself (added in
+    # 2.9). This will always return changed=true.
+    #
+    # Choices: absent, mounted, present, unmounted, remounted
+    state: mounted
+  loop: "{{ nfs_client_mounts }}"
