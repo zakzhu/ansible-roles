@@ -1,4 +1,13 @@
 ---
+- name: <r_nfs_server_t_setup> create directory PATH
+  file:
+    path:
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+    #recurse: yes
+
 - name: <r_nfs_server_t_setup> template a file to /etc/exports
   template:
     src: exports.j2

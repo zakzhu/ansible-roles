@@ -1,2 +1,13 @@
 ---
 # defaults file for nfs_server
+
+nfs_server_shares:
+  - export: /nfs
+    hosts:
+      - host: 10.10.20.0/24
+        options:
+          -
+
+      - host: 10.0.0.0/8
+        options:
+          -
