@@ -1,5 +1,6 @@
 ---
 # defaults file for nfs_client
+
 nfs_client_mounts:
   - mount_point: /nfs
     src: "10.10.20.19:/export"
