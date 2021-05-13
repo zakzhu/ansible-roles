@@ -4,14 +4,14 @@
 nfs_server_shares:
   - export: /nfs
     hosts:
-      - host: *.zakzhu.com
+      - hostname: *.zakzhu.com
         options:
           - ro
           - sync
           - no_subtree_check
           - no_root_squash
 
-      - host: 10.0.0.0/8
+      - hostname: 10.0.0.0/8
         options:
           - rw
           - sync
