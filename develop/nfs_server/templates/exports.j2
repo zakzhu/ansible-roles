@@ -2,11 +2,11 @@
 
 {% set shared_hosts = [] %}
 {%- for shares_entry in nfs_server_shares -%}
-    {%- set export = {{ shares_entry['export'] }} -%}
+    {%- set export = shares_entry['export'] -%}
     {%- for host_entry in shares_entry['hosts'] -%}
-        {%- set host = {{ host_entry['hostname'] }} -%}
-        {%- set options = {{ host_entry['options'] | join(',') }} -%}
-        {%- shared_hosts.append(f'{host}({options})') -%}
+        {%- set hostname = host_entry['hostname'] -%}
+        {%- set options = ','.join(host_entry['options']) -%}
+        {%- shared_hosts.append(f'{hostname}({options})') -%}
     {%- endfor -%}
 {{ export }} {{ shared_hosts | join(' ') }}
 {%- endfor -%}
