@@ -7,7 +7,7 @@
         {%- set hostname = host_entry['hostname'] -%}
         {%- set options = ','.join(host_entry['options']) -%}
         {%- set shared_host = hostname + '(' + options + ')' -%}
-        {%- shared_hosts.append(shared_host) -%}
+        {%- do shared_hosts.append(shared_host) -%}
     {%- endfor -%}
 {{ export }} {{ shared_hosts | join(' ') }}
 {% endfor %}

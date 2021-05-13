@@ -8,6 +8,8 @@
     mode: "0755"
     #recurse: yes
   loop: "{{ nfs_server_shares }}"
+  loop_control:
+    label: "{{ item.export }}"
 
 - name: <r_nfs_server_t_setup> template a file to /etc/exports
   template:
