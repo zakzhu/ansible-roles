@@ -6,7 +6,8 @@
     {%- for host_entry in shares_entry['hosts'] -%}
         {%- set hostname = host_entry['hostname'] -%}
         {%- set options = ','.join(host_entry['options']) -%}
-        {%- shared_hosts.append(f'{hostname}({options})') -%}
+        {%- set shared_host = hostname + '(' + options + ')' -%}
+        {%- shared_hosts.append(shared_host) -%}
     {%- endfor -%}
 {{ export }} {{ shared_hosts | join(' ') }}
 {% endfor %}
