@@ -1,7 +1,7 @@
 {{ ansible_managed | comment }}
 
-{% set shared_hosts = [] %}
-{%- for shares_entry in nfs_server_shares -%}
+{% for shares_entry in nfs_server_shares %}
+    {%- set shared_hosts = [] -%}
     {%- set export = shares_entry['export'] -%}
     {%- for host_entry in shares_entry['hosts'] -%}
         {%- set hostname = host_entry['hostname'] -%}
@@ -9,4 +9,4 @@
         {%- shared_hosts.append(f'{hostname}({options})') -%}
     {%- endfor -%}
 {{ export }} {{ shared_hosts | join(' ') }}
-{%- endfor -%}
+{% endfor %}
