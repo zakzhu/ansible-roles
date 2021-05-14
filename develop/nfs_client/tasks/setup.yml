@@ -4,7 +4,7 @@
     path: "{{ item.mount_point }}"
     src: "{{ item.src }}"
     fstype: nfs
-    opts: "{{ item.opts | joint(',') }}"
+    opts: "{{ item.opts | join(',') }}"
 
     # If `mounted', the device will be actively mounted and
     # appropriately configured in `fstab'. If the mount point is not
