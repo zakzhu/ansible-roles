@@ -3,4 +3,4 @@
   remote_user: root
   vars:
   roles:
-    - chrony
+    - nfs_client

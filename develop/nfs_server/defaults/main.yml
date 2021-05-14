@@ -2,7 +2,7 @@
 # defaults file for nfs_server
 
 nfs_server_shares:
-  - export: /nfs
+  - export: /export
     hosts:
       - hostname: "*.zakzhu.com"
         options:
@@ -10,6 +10,7 @@ nfs_server_shares:
           - sync
           - no_subtree_check
           - no_root_squash
+          - insecure
 
       - hostname: "10.0.0.0/8"
         options:
@@ -17,3 +18,4 @@ nfs_server_shares:
           - sync
           - no_subtree_check
           - no_root_squash
+          - insecure
