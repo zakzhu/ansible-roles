@@ -11,4 +11,5 @@ nfs_client_mounts:
       - timeo=600
       - retrans=2
       - noresvport
+      - x-systemd.mount-timeout=30
       - _netdev
