@@ -1,2 +1,18 @@
 ---
 # tasks file for opvn_server
+
+- import_tasks: install.yml
+  tags:
+    - r_opvn_server_t_install
+
+- import_tasks: easyrsa.yml
+  tags:
+    - r_opvn_server_t_easyrsa
+
+- import_tasks: config.yml
+  tags:
+    - r_opvn_server_t_config
+
+- import_tasks: network.yml
+  tags:
+    - r_opvn_server_t_network
